@@ -7,8 +7,9 @@ import { generateAIResponse } from "../services/ai.service.js";
 import { retryInvalidJson } from "../services/jsonRetry.js";
 import { saveAIInteraction } from "../services/logging.service.js";
 
-
 export const generateContent = async (req, res) => {
+  const startTime = Date.now();
+
   try {
     const data = req.body;
 
@@ -52,10 +53,17 @@ Your response MUST begin with { and end with }.
         content: prompt,
       },
     ];
-    const response = await retryInvalidJson(
-        generateAIResponse,
-        messages
+
+    // Generate AI Response (with retry support)
+    const {
+      response,
+      retries,
+    } = await retryInvalidJson(
+      generateAIResponse,
+      messages
     );
+
+    const responseTimeMs = Date.now() - startTime;
 
     console.log("\n========== RAW AI RESPONSE ==========\n");
     console.log(response);
@@ -67,34 +75,55 @@ Your response MUST begin with { and end with }.
       .trim();
 
     const parsed = JSON.parse(cleaned);
-    
-    //TO LOG THE DATA 
+
+    // Save successful interaction
     await saveAIInteraction({
-      provider: process.env.AI_PROVIDER,
-      model: process.env.OPENROUTER_MODEL,
-      mode,
+      status: "success",
+
+      execution: {
+        provider: process.env.AI_PROVIDER,
+        model: process.env.OPENROUTER_MODEL,
+        responseTimeMs,
+        retryCount: retries,
+      },
+
       request: req.body,
+
       prompt,
-      rawResponse: response,
-      parsedResponse: parsed,
-      status: "success"
+
+      response: {
+        raw: response,
+        parsed,
+      },
     });
 
     return res.json({
       success: true,
       content: parsed,
     });
+
   } catch (err) {
+
     console.error(err);
-    //TO LOG THE ERRORS
+
+    const responseTimeMs = Date.now() - startTime;
+
+    // Save failed interaction
     await saveAIInteraction({
+      status: "failed",
+
+      execution: {
         provider: process.env.AI_PROVIDER,
         model: process.env.OPENROUTER_MODEL,
-        mode: req.body.mode,
-        request: req.body,
-        error: err.message,
+        responseTimeMs,
+      },
+
+      request: req.body,
+
+      error: {
+        message: err.message,
         stack: err.stack,
-        status: "failed"
+      },
     });
 
     return res.status(500).json({

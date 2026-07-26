@@ -1,0 +1,268 @@
+[
+  {
+    "id": "16767e29-77fb-43af-bf97-6a7e1cc71592",
+    "timestamp": "2026-07-26T12:19:44.633Z",
+    "provider": "openrouter",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "mode": "topic",
+    "request": {
+      "mode": "topic",
+      "topic": "Operating Systems",
+      "level": "Beginner",
+      "depth": "Deep",
+      "roadmap": true,
+      "quiz": true
+    },
+    "error": "mode is not defined",
+    "stack": "ReferenceError: mode is not defined\n    at generateContent (file:///C:/Users/sarpo/OneDrive/Desktop/Flam_Frontend_Assignment/backend/controllers/ai.controller.js:75:7)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)",
+    "status": "failed"
+  },
+  {
+    "id": "1b970892-8a81-4ba8-8bee-8ba9087950f0",
+    "timestamp": "2026-07-26T12:21:57.782Z",
+    "provider": "openrouter",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "mode": "topic",
+    "request": {
+      "mode": "topic",
+      "topic": "Operating Systems",
+      "level": "Beginner",
+      "depth": "Deep",
+      "roadmap": false,
+      "quiz": true
+    },
+    "error": "mode is not defined",
+    "stack": "ReferenceError: mode is not defined\n    at generateContent (file:///C:/Users/sarpo/OneDrive/Desktop/Flam_Frontend_Assignment/backend/controllers/ai.controller.js:75:7)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)",
+    "status": "failed"
+  },
+  {
+    "id": "0e340288-25d4-4608-8b54-bd0e3750e64f",
+    "timestamp": "2026-07-26T12:27:00.646Z",
+    "provider": "openrouter",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "mode": "topic",
+    "request": {
+      "mode": "topic",
+      "topic": "Operating Systems",
+      "level": "Beginner",
+      "depth": "Deep",
+      "roadmap": false,
+      "quiz": true
+    },
+    "error": "responseTimeMs is not defined",
+    "stack": "ReferenceError: responseTimeMs is not defined\n    at generateContent (file:///C:/Users/sarpo/OneDrive/Desktop/Flam_Frontend_Assignment/backend/controllers/ai.controller.js:77:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)",
+    "status": "failed"
+  },
+  {
+    "id": "deb45426-6302-485a-b343-0cdda907658d",
+    "timestamp": "2026-07-26T12:28:38.279Z",
+    "provider": "openrouter",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "mode": "topic",
+    "request": {
+      "mode": "topic",
+      "topic": "Operating Systems",
+      "level": "Beginner",
+      "depth": "Deep",
+      "roadmap": false,
+      "flashcards": true
+    },
+    "error": "responseTimeMs is not defined",
+    "stack": "ReferenceError: responseTimeMs is not defined\n    at generateContent (file:///C:/Users/sarpo/OneDrive/Desktop/Flam_Frontend_Assignment/backend/controllers/ai.controller.js:77:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)",
+    "status": "failed"
+  },
+  {
+    "id": "4653ce47-ea2f-483e-b8f4-6e7c7345494c",
+    "timestamp": "2026-07-26T12:34:45.715Z",
+    "provider": "openrouter",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "mode": "topic",
+    "request": {
+      "mode": "topic",
+      "topic": "Operating Systems",
+      "level": "Beginner",
+      "depth": "Deep",
+      "roadmap": false,
+      "flashcards": true
+    },
+    "error": "retries is not defined",
+    "stack": "ReferenceError: retries is not defined\n    at generateContent (file:///C:/Users/sarpo/OneDrive/Desktop/Flam_Frontend_Assignment/backend/controllers/ai.controller.js:80:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)",
+    "status": "failed"
+  },
+  {
+    "id": "3a60b050-73b3-4cef-a3b9-aee50e05a0c0",
+    "timestamp": "2026-07-26T12:37:51.536Z",
+    "status": "success",
+    "execution": {
+      "provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it:free",
+      "responseTimeMs": 60437,
+      "retryCount": 0
+    },
+    "request": {
+      "mode": "topic",
+      "topic": "Operating Systems",
+      "level": "Beginner",
+      "depth": "Deep",
+      "roadmap": false,
+      "flashcards": true
+    },
+    "prompt": "\nYou are an expert professor and curriculum designer.\n\nGenerate a structured learning roadmap for the following topic.\n\nStudent Information:\n- Topic: Operating Systems\n- Current Level: Beginner\n- Expected Depth: Deep\n\nRequirements:\n\n- Generate flashcards for revision.\n\nGuidelines:\n\n- The roadmap must progress from beginner concepts to advanced concepts.\n- Each roadmap module should naturally build upon the previous one.\n- Keep explanations concise, clear, and beginner-friendly.\n- Focus on concepts that are important for interviews and practical understanding.\n- Each flashcard should test exactly one important concept.\n- Flashcards should cover concepts from the roadmap.\n- Generate realistic study durations.\n- Use ONLY the allowed difficulty values:\n  - Easy\n  - Medium\n  - Hard\n\nIMPORTANT:\n-You are a JSON generator.\n\nYou MUST respond with ONLY a valid JSON object.\n\nDo NOT include:\n- markdown\n- explanations\n- notes\n- comments\n- code fences\n- greetings\n- extra text\n\nYour entire response must begin with '{' and end with '}'.\n- Return ONLY valid JSON.\n- Do NOT include markdown.\n- Do NOT wrap the response inside ```.\n- Do NOT write explanations before or after the JSON.\n- All IDs must be unique.\n- estimatedMinutes and estimatedCompletionMinutes must be numbers.\n- keyConcepts should contain 2–5 important concepts.\n- Generate between 5 and 8 roadmap modules.\n- Generate between 8 and 12 flashcards.\n\nReturn JSON in EXACTLY this format:\n\n{\n  \"type\": \"topic\",\n  \"metadata\": {\n    \"title\": \"\",\n    \"level\": \"\",\n    \"depth\": \"\",\n    \"estimatedCompletionMinutes\": 0,\n    \"moduleCount\": 0\n  },\n  \"summary\": \"\",\n  \"roadmap\": [\n    {\n      \"id\": \"rm-1\",\n      \"order\": 1,\n      \"title\": \"\",\n      \"description\": \"\",\n      \"difficulty\": \"Easy\",\n      \"estimatedMinutes\": 0,\n      \"keyConcepts\": [\n        \"\",\n        \"\"\n      ]\n    }\n  ],\n  \"flashcards\": [\n    {\n      \"id\": \"fc-1\",\n      \"topic\": \"\",\n      \"question\": \"\",\n      \"answer\": \"\"\n    }\n  ]\n}\n",
+    "response": {
+      "raw": "{\n  \"type\": \"topic\",\n  \"metadata\": {\n    \"title\": \"Operating Systems\",\n    \"level\": \"Beginner\",\n    \"depth\": \"Deep\",\n    \"estimatedCompletionMinutes\": 1200,\n    \"moduleCount\": 6\n  },\n  \"summary\": \"A comprehensive journey from fundamental OS architecture to advanced resource management, concurrency, and storage systems, designed for deep technical mastery.\",\n  \"roadmap\": [\n    {\n      \"id\": \"rm-1\",\n      \"order\": 1,\n      \"title\": \"Introduction to OS Architecture\",\n      \"description\": \"Understand the role of the OS as a resource manager and the interface between hardware and software.\",\n      \"difficulty\": \"Easy\",\n      \"estimatedMinutes\": 120,\n      \"keyConcepts\": [\n        \"Kernel vs User Mode\",\n        \"System Calls\",\n        \"Monolithic vs Microkernel\"\n      ]\n    },\n    {\n      \"id\": \"rm-2\",\n      \"order\": 2,\n      \"title\": \"Process Management & Lifecycle\",\n      \"description\": \"Learn how the OS manages executing programs, process states, and context switching.\",\n      \"difficulty\": \"Medium\",\n      \"estimatedMinutes\": 180,\n      \"keyConcepts\": [\n        \"Process Control Block (PCB)\",\n        \"Process States\",\n        \"Context Switching\"\n      ]\n    },\n    {\n      \"id\": \"rm-3\",\n      \"order\": 3,\n      \"title\": \"CPU Scheduling Algorithms\",\n      \"description\": \"Deep dive into how the OS decides which process runs next to optimize performance.\",\n      \"difficulty\": \"Medium\",\n      \"estimatedMinutes\": 240,\n      \"keyConcepts\": [\n        \"First-Come-First-Served (FCFS)\",\n        \"Shortest Job First (SJF)\",\n        \"Round Robin Scheduling\"\n      ]\n    },\n    {\n      \"id\": \"rm-4\",\n      \"order\": 4,\n      \"title\": \"Concurrency and Synchronization\",\n      \"description\": \"Master the complexities of multiple processes accessing shared resources simultaneously.\",\n      \"difficulty\": \"Hard\",\n      \"estimatedMinutes\": 300,\n      \"keyConcepts\": [\n        \"Race Conditions\",\n        \"Mutexes and Semaphores\",\n        \"Deadlock Prevention\"\n      ]\n    },\n    {\n      \"id\": \"rm-5\",\n      \"order\": 5,\n      \"title\": \"Memory Management\",\n      \"description\": \"Explore how the OS allocates physical and virtual memory to processes.\",\n      \"difficulty\": \"Hard\",\n      \"estimatedMinutes\": 240,\n      \"keyConcepts\": [\n        \"Paging and Segmentation\",\n        \"Virtual Memory\",\n        \"Thrashing\"\n      ]\n    },\n    {\n      \"id\": \"rm-6\",\n      \"order\": 6,\n      \"title\": \"Storage and File Systems\",\n      \"description\": \"Understand how data is organized, stored, and retrieved from persistent media.\",\n      \"difficulty\": \"Medium\",\n      \"estimatedMinutes\": 120,\n      \"keyConcepts\": [\n        \"File Allocation Methods\",\n        \"Inodes\",\n        \"Disk Scheduling\"\n      ]\n    }\n  ],\n  \"flashcards\": [\n    {\n      \"id\": \"fc-1\",\n      \"topic\": \"Architecture\",\n      \"question\": \"What is the primary difference between User Mode and Kernel Mode?\",\n      \"answer\": \"Kernel mode has unrestricted access to hardware and CPU instructions, while User mode has restricted access to prevent system instability.\"\n    },\n    {\n      \"id\": \"fc-2\",\n      \"topic\": \"Architecture\",\n      \"question\": \"What is a System Call?\",\n      \"answer\": \"A programmatic way in which a computer program requests a service from the kernel of the operating system.\"\n    },\n    {\n      \"id\": \"fc-3\",\n      \"topic\": \"Process Management\",\n      \"question\": \"What information is stored in a Process Control Block (PCB)?\",\n      \"answer\": \"Process state, Program Counter, CPU registers, memory management info, and I/O status.\"\n    },\n    {\n      \"id\": \"fc-4\",\n      \"topic\": \"CPU Scheduling\",\n      \"question\": \"What is the main disadvantage of First-Come-First-Served (FCFS) scheduling?\",\n      \"answer\": \"The Convoy Effect, where short processes wait for a long process to finish, increasing average waiting time.\"\n    },\n    {\n      \"id\": \"fc-5\",\n      \"topic\": \"Concurrency\",\n      \"question\": \"What is a Race Condition?\",\n      \"answer\": \"A situation where the outcome of a process depends on the unpredictable order or timing of other processes.\"\n    },\n    {\n      \"id\": \"fc-6\",\n      \"topic\": \"Concurrency\",\n      \"question\": \"What are the four necessary conditions for a Deadlock to occur?\",\n      \"answer\": \"Mutual Exclusion, Hold and Wait, No Preemption, and Circular Wait.\"\n    },\n    {\n      \"id\": \"fc-7\",\n      \"topic\": \"Memory Management\",\n      \"question\": \"What is Virtual Memory?\",\n      \"answer\": \"A technique that allows the execution of processes that are larger than the physical memory by using disk space as an extension of RAM.\"\n    },\n    {\n      \"id\": \"fc-8\",\n      \"topic\": \"Memory Management\",\n      \"question\": \"What is Thrashing?\",\n      \"answer\": \"A state where the system spends more time swapping pages in and out of memory than executing actual instructions.\"\n    },\n    {\n      \"id\": \"fc-9\",\n      \"topic\": \"Storage\",\n      \"question\": \"What is an Inode in a file system?\",\n      \"answer\": \"A data structure that stores metadata about a file (size, owner, permissions) but not the file's name or actual data.\"\n    },\n    {\n      \"id\": \"fc-10\",\n      \"topic\": \"Concurrency\",\n      \"question\": \"What is the difference between a Mutex and a Semaphore?\",\n      \"answer\": \"A Mutex is a locking mechanism used to synchronize access to a single resource, while a Semaphore is a signaling mechanism that can allow multiple threads to access a set of resources.\"\n    }\n  ]\n}",
+      "parsed": {
+        "type": "topic",
+        "metadata": {
+          "title": "Operating Systems",
+          "level": "Beginner",
+          "depth": "Deep",
+          "estimatedCompletionMinutes": 1200,
+          "moduleCount": 6
+        },
+        "summary": "A comprehensive journey from fundamental OS architecture to advanced resource management, concurrency, and storage systems, designed for deep technical mastery.",
+        "roadmap": [
+          {
+            "id": "rm-1",
+            "order": 1,
+            "title": "Introduction to OS Architecture",
+            "description": "Understand the role of the OS as a resource manager and the interface between hardware and software.",
+            "difficulty": "Easy",
+            "estimatedMinutes": 120,
+            "keyConcepts": [
+              "Kernel vs User Mode",
+              "System Calls",
+              "Monolithic vs Microkernel"
+            ]
+          },
+          {
+            "id": "rm-2",
+            "order": 2,
+            "title": "Process Management & Lifecycle",
+            "description": "Learn how the OS manages executing programs, process states, and context switching.",
+            "difficulty": "Medium",
+            "estimatedMinutes": 180,
+            "keyConcepts": [
+              "Process Control Block (PCB)",
+              "Process States",
+              "Context Switching"
+            ]
+          },
+          {
+            "id": "rm-3",
+            "order": 3,
+            "title": "CPU Scheduling Algorithms",
+            "description": "Deep dive into how the OS decides which process runs next to optimize performance.",
+            "difficulty": "Medium",
+            "estimatedMinutes": 240,
+            "keyConcepts": [
+              "First-Come-First-Served (FCFS)",
+              "Shortest Job First (SJF)",
+              "Round Robin Scheduling"
+            ]
+          },
+          {
+            "id": "rm-4",
+            "order": 4,
+            "title": "Concurrency and Synchronization",
+            "description": "Master the complexities of multiple processes accessing shared resources simultaneously.",
+            "difficulty": "Hard",
+            "estimatedMinutes": 300,
+            "keyConcepts": [
+              "Race Conditions",
+              "Mutexes and Semaphores",
+              "Deadlock Prevention"
+            ]
+          },
+          {
+            "id": "rm-5",
+            "order": 5,
+            "title": "Memory Management",
+            "description": "Explore how the OS allocates physical and virtual memory to processes.",
+            "difficulty": "Hard",
+            "estimatedMinutes": 240,
+            "keyConcepts": [
+              "Paging and Segmentation",
+              "Virtual Memory",
+              "Thrashing"
+            ]
+          },
+          {
+            "id": "rm-6",
+            "order": 6,
+            "title": "Storage and File Systems",
+            "description": "Understand how data is organized, stored, and retrieved from persistent media.",
+            "difficulty": "Medium",
+            "estimatedMinutes": 120,
+            "keyConcepts": [
+              "File Allocation Methods",
+              "Inodes",
+              "Disk Scheduling"
+            ]
+          }
+        ],
+        "flashcards": [
+          {
+            "id": "fc-1",
+            "topic": "Architecture",
+            "question": "What is the primary difference between User Mode and Kernel Mode?",
+            "answer": "Kernel mode has unrestricted access to hardware and CPU instructions, while User mode has restricted access to prevent system instability."
+          },
+          {
+            "id": "fc-2",
+            "topic": "Architecture",
+            "question": "What is a System Call?",
+            "answer": "A programmatic way in which a computer program requests a service from the kernel of the operating system."
+          },
+          {
+            "id": "fc-3",
+            "topic": "Process Management",
+            "question": "What information is stored in a Process Control Block (PCB)?",
+            "answer": "Process state, Program Counter, CPU registers, memory management info, and I/O status."
+          },
+          {
+            "id": "fc-4",
+            "topic": "CPU Scheduling",
+            "question": "What is the main disadvantage of First-Come-First-Served (FCFS) scheduling?",
+            "answer": "The Convoy Effect, where short processes wait for a long process to finish, increasing average waiting time."
+          },
+          {
+            "id": "fc-5",
+            "topic": "Concurrency",
+            "question": "What is a Race Condition?",
+            "answer": "A situation where the outcome of a process depends on the unpredictable order or timing of other processes."
+          },
+          {
+            "id": "fc-6",
+            "topic": "Concurrency",
+            "question": "What are the four necessary conditions for a Deadlock to occur?",
+            "answer": "Mutual Exclusion, Hold and Wait, No Preemption, and Circular Wait."
+          },
+          {
+            "id": "fc-7",
+            "topic": "Memory Management",
+            "question": "What is Virtual Memory?",
+            "answer": "A technique that allows the execution of processes that are larger than the physical memory by using disk space as an extension of RAM."
+          },
+          {
+            "id": "fc-8",
+            "topic": "Memory Management",
+            "question": "What is Thrashing?",
+            "answer": "A state where the system spends more time swapping pages in and out of memory than executing actual instructions."
+          },
+          {
+            "id": "fc-9",
+            "topic": "Storage",
+            "question": "What is an Inode in a file system?",
+            "answer": "A data structure that stores metadata about a file (size, owner, permissions) but not the file's name or actual data."
+          },
+          {
+            "id": "fc-10",
+            "topic": "Concurrency",
+            "question": "What is the difference between a Mutex and a Semaphore?",
+            "answer": "A Mutex is a locking mechanism used to synchronize access to a single resource, while a Semaphore is a signaling mechanism that can allow multiple threads to access a set of resources."
+          }
+        ]
+      }
+    }
+  }
+]
