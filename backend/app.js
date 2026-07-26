@@ -3,12 +3,12 @@ dotenv.config();
 import express from "express";
 import { generateAIResponse } from "./services/ai.service.js";
 import { buildTopicPrompt } from "./services/promptBuilder.js";
-
-console.log(process.env.OPENROUTER_API_KEY);
+import { requestLogger } from './middleware/logger.js';
 
 const app = express();
 const PORT = process.env.PORT
 app.use(express.json());
+app.use(requestLogger);
 
 app.post("/test/generate", async (req, res) => {
     try {
