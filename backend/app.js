@@ -1,8 +1,10 @@
-import express from "express";
 import dotenv from 'dotenv';
 dotenv.config();
-import { generateResponse } from "./services/ollamaService.js";
+import express from "express";
+import { generateAIResponse } from "./services/ai.service.js";
 import { buildTopicPrompt } from "./services/promptBuilder.js";
+
+console.log(process.env.OPENROUTER_API_KEY);
 
 const app = express();
 const PORT = process.env.PORT
@@ -22,7 +24,7 @@ app.post("/test/generate", async (req, res) => {
 
         const prompt = buildTopicPrompt(data);
 
-        const reply = await generateResponse(prompt);
+        const response = await generateAIResponse(messages);
 
         console.log("========== RAW AI RESPONSE ==========");
         console.log(reply);
@@ -58,6 +60,9 @@ app.post("/test/generate", async (req, res) => {
 
     }
 });
+//AI ROUTES
+import aiRoutes from "./routes/ai.routes.js";
+app.use("/api/ai", aiRoutes);
 
 app.listen(PORT, () => {
     console.log("Server Running...",PORT);
