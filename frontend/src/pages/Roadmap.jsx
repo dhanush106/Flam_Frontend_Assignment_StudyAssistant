@@ -2,6 +2,7 @@ import { Navigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import { ProgressProvider, useProgress } from "../context/ProgressContext";
+import { useHistory } from "../context/HistoryContext";
 
 import ProgressHeader from "../components/roadmap/ProgressHeader";
 import Timeline from "../components/roadmap/Timeline";
@@ -28,13 +29,19 @@ const RoadmapContent = ({ roadmap, flashcards }) => {
 
 const Roadmap = () => {
   const { state } = useLocation();
+  const { presentRequest } = useHistory();
 
-  if (!state?.roadmap) {
+  const resolvedRoadmap =
+    state?.roadmap || presentRequest?.content?.roadmap || null;
+  const resolvedFlashcards =
+    state?.flashcards || presentRequest?.content?.flashcards || [];
+
+  if (!resolvedRoadmap) {
     return <Navigate to="/generate" replace />;
   }
 
-  const roadmap = state.roadmap;
-  const flashcards = state.flashcards || [];
+  const roadmap = resolvedRoadmap;
+  const flashcards = resolvedFlashcards;
 
   return (
     <ProgressProvider roadmap={roadmap}>

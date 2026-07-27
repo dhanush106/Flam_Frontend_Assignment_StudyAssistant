@@ -1151,5 +1151,182 @@
         ]
       }
     }
+  },
+  {
+    "id": "25da2413-54e1-4da6-aedd-8f6d68d75ea9",
+    "timestamp": "2026-07-27T20:09:51.848Z",
+    "status": "success",
+    "execution": {
+      "provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it:free",
+      "responseTimeMs": 140313,
+      "retryCount": 0
+    },
+    "request": {
+      "mode": "topic",
+      "topic": "Operating System",
+      "difficulty": "Beginner",
+      "depth": "Quick",
+      "roadmap": true,
+      "flashcards": true
+    },
+    "prompt": "\nYou are an expert professor and curriculum designer.\n\nGenerate a structured learning roadmap for the following topic.\n\nStudent Information:\n- Topic: Operating System\n- Current Level: undefined\n- Expected Depth: Quick\n\nRequirements:\n- Generate a detailed learning roadmap.\n- Generate flashcards for revision.\n\nGuidelines:\n\n- The roadmap must progress from beginner concepts to advanced concepts.\n- Each roadmap module should naturally build upon the previous one.\n- Keep explanations concise, clear, and beginner-friendly.\n- Focus on concepts that are important for interviews and practical understanding.\n- Each flashcard should test exactly one important concept.\n- Flashcards should cover concepts from the roadmap.\n- Generate realistic study durations.\n- Use ONLY the allowed difficulty values:\n  - Easy\n  - Medium\n  - Hard\n\nIMPORTANT:\n-You are a JSON generator.\n\nYou MUST respond with ONLY a valid JSON object.\n\nDo NOT include:\n- markdown\n- explanations\n- notes\n- comments\n- code fences\n- greetings\n- extra text\n\nYour entire response must begin with '{' and end with '}'.\n- Return ONLY valid JSON.\n- Do NOT include markdown.\n- Do NOT wrap the response inside ```.\n- Do NOT write explanations before or after the JSON.\n- All IDs must be unique.\n- estimatedMinutes and estimatedCompletionMinutes must be numbers.\n- keyConcepts should contain 2–5 important concepts.\n- Generate between 5 and 8 roadmap modules.\n- Generate between 8 and 12 flashcards.\n\nReturn JSON in EXACTLY this format:\n\n{\n  \"type\": \"topic\",\n  \"metadata\": {\n    \"title\": \"\",\n    \"level\": \"\",\n    \"depth\": \"\",\n    \"estimatedCompletionMinutes\": 0,\n    \"moduleCount\": 0\n  },\n  \"summary\": \"\",\n  \"roadmap\": [\n    {\n      \"id\": \"rm-1\",\n      \"order\": 1,\n      \"title\": \"\",\n      \"description\": \"\",\n      \"difficulty\": \"Easy\",\n      \"estimatedMinutes\": 0,\n      \"keyConcepts\": [\n        \"\",\n        \"\"\n      ]\n    }\n  ],\n  \"flashcards\": [\n    {\n      \"id\": \"fc-1\",\n      \"topic\": \"\",\n      \"question\": \"\",\n      \"answer\": \"\"\n    }\n  ]\n}\n",
+    "response": {
+      "raw": "{\n  \"type\": \"topic\",\n  \"metadata\": {\n    \"title\": \"Operating Systems\",\n    \"level\": \"Beginner\",\n    \"depth\": \"Quick\",\n    \"estimatedCompletionMinutes\": 240,\n    \"moduleCount\": 6\n  },\n  \"summary\": \"A fast-paced overview of Operating System fundamentals, covering process management, memory, storage, and concurrency to prepare for interviews and practical application.\",\n  \"roadmap\": [\n    {\n      \"id\": \"rm-1\",\n      \"order\": 1,\n      \"title\": \"Introduction to OS\",\n      \"description\": \"Understand the core role of an OS as a resource manager and the interface between hardware and software.\",\n      \"difficulty\": \"Easy\",\n      \"estimatedMinutes\": 30,\n      \"keyConcepts\": [\n        \"Kernel\",\n        \"System Calls\",\n        \"User vs Kernel Mode\"\n      ]\n    },\n    {\n      \"id\": \"rm-2\",\n      \"order\": 2,\n      \"title\": \"Process Management\",\n      \"description\": \"Learn how the OS manages executing programs and handles multiple tasks.\",\n      \"difficulty\": \"Medium\",\n      \"estimatedMinutes\": 50,\n      \"keyConcepts\": [\n        \"Process vs Thread\",\n        \"Process Control Block (PCB)\",\n        \"Context Switching\"\n      ]\n    },\n    {\n      \"id\": \"rm-3\",\n      \"order\": 3,\n      \"title\": \"CPU Scheduling\",\n      \"description\": \"Study how the OS decides which process runs next to maximize efficiency.\",\n      \"difficulty\": \"Medium\",\n      \"estimatedMinutes\": 45,\n      \"keyConcepts\": [\n        \"First-Come First-Served (FCFS)\",\n        \"Round Robin\",\n        \"Shortest Job First (SJF)\"\n      ]\n    },\n    {\n      \"id\": \"rm-4\",\n      \"order\": 4,\n      \"title\": \"Process Synchronization\",\n      \"description\": \"Explore how processes coordinate to avoid data corruption and race conditions.\",\n      \"difficulty\": \"Hard\",\n      \"estimatedMinutes\": 50,\n      \"keyConcepts\": [\n        \"Race Condition\",\n        \"Mutex\",\n        \"Semaphore\",\n        \"Deadlock\"\n      ]\n    },\n    {\n      \"id\": \"rm-5\",\n      \"order\": 5,\n      \"title\": \"Memory Management\",\n      \"description\": \"Understand how the OS allocates RAM to various processes.\",\n      \"difficulty\": \"Medium\",\n      \"estimatedMinutes\": 40,\n      \"keyConcepts\": [\n        \"Paging\",\n        \"Segmentation\",\n        \"Virtual Memory\"\n      ]\n    },\n    {\n      \"id\": \"rm-6\",\n      \"order\": 6,\n      \"title\": \"Storage and File Systems\",\n      \"description\": \"Learn how data is organized and persisted on physical disks.\",\n      \"difficulty\": \"Easy\",\n      \"estimatedMinutes\": 25,\n      \"keyConcepts\": [\n        \"File Allocation Methods\",\n        \"Disk Scheduling\",\n        \"Inodes\"\n      ]\n    }\n  ],\n  \"flashcards\": [\n    {\n      \"id\": \"fc-1\",\n      \"topic\": \"OS Basics\",\n      \"question\": \"What is the primary function of the Kernel?\",\n      \"answer\": \"The kernel acts as the core component of the OS, managing system resources and providing essential services to software.\"\n    },\n    {\n      \"id\": \"fc-2\",\n      \"topic\": \"Process Management\",\n      \"question\": \"What is the main difference between a process and a thread?\",\n      \"answer\": \"A process is an independent program in execution with its own memory space, while a thread is a subset of a process that shares the process's resources.\"\n    },\n    {\n      \"id\": \"fc-3\",\n      \"topic\": \"CPU Scheduling\",\n      \"question\": \"What is the goal of Round Robin scheduling?\",\n      \"answer\": \"To provide fair CPU time to all processes by using a fixed time quantum for each process.\"\n    },\n    {\n      \"id\": \"fc-4\",\n      \"topic\": \"Synchronization\",\n      \"question\": \"What is a Race Condition?\",\n      \"answer\": \"A situation where the outcome of a process depends on the unpredictable order or timing of other processes accessing shared data.\"\n    },\n    {\n      \"id\": \"fc-5\",\n      \"topic\": \"Synchronization\",\n      \"question\": \"What is a Mutex?\",\n      \"answer\": \"A mutual exclusion object used to prevent multiple threads from accessing a shared resource simultaneously.\"\n    },\n    {\n      \"id\": \"fc-6\",\n      \"topic\": \"Deadlock\",\n      \"question\": \"What are the four necessary conditions for a deadlock?\",\n      \"answer\": \"Mutual Exclusion, Hold and Wait, No Preemption, and Circular Wait.\"\n    },\n    {\n      \"id\": \"fc-7\",\n      \"topic\": \"Memory Management\",\n      \"question\": \"What is Virtual Memory?\",\n      \"answer\": \"A memory management technique that allows the execution of processes that may not be entirely in physical RAM by using disk space.\"\n    },\n    {\n      \"id\": \"fc-8\",\n      \"topic\": \"Memory Management\",\n      \"question\": \"What is Paging?\",\n      \"answer\": \"A memory management scheme that eliminates the need for contiguous allocation of physical memory by dividing memory into fixed-size blocks.\"\n    },\n    {\n      \"id\": \"fc-9\",\n      \"topic\": \"Storage\",\n      \"question\": \"What is an Inode?\",\n      \"answer\": \"A data structure in a Unix-style file system that describes a file-system object such as a file or a directory.\"\n    },\n    {\n      \"id\": \"fc-10\",\n      \"topic\": \"OS Basics\",\n      \"question\": \"What is a System Call?\",\n      \"answer\": \"The programmatic way in which a computer program requests a service from the kernel of the operating system.\"\n    }\n  ]\n}",
+      "parsed": {
+        "type": "topic",
+        "metadata": {
+          "title": "Operating Systems",
+          "level": "Beginner",
+          "depth": "Quick",
+          "estimatedCompletionMinutes": 240,
+          "moduleCount": 6
+        },
+        "summary": "A fast-paced overview of Operating System fundamentals, covering process management, memory, storage, and concurrency to prepare for interviews and practical application.",
+        "roadmap": [
+          {
+            "id": "rm-1",
+            "order": 1,
+            "title": "Introduction to OS",
+            "description": "Understand the core role of an OS as a resource manager and the interface between hardware and software.",
+            "difficulty": "Easy",
+            "estimatedMinutes": 30,
+            "keyConcepts": [
+              "Kernel",
+              "System Calls",
+              "User vs Kernel Mode"
+            ]
+          },
+          {
+            "id": "rm-2",
+            "order": 2,
+            "title": "Process Management",
+            "description": "Learn how the OS manages executing programs and handles multiple tasks.",
+            "difficulty": "Medium",
+            "estimatedMinutes": 50,
+            "keyConcepts": [
+              "Process vs Thread",
+              "Process Control Block (PCB)",
+              "Context Switching"
+            ]
+          },
+          {
+            "id": "rm-3",
+            "order": 3,
+            "title": "CPU Scheduling",
+            "description": "Study how the OS decides which process runs next to maximize efficiency.",
+            "difficulty": "Medium",
+            "estimatedMinutes": 45,
+            "keyConcepts": [
+              "First-Come First-Served (FCFS)",
+              "Round Robin",
+              "Shortest Job First (SJF)"
+            ]
+          },
+          {
+            "id": "rm-4",
+            "order": 4,
+            "title": "Process Synchronization",
+            "description": "Explore how processes coordinate to avoid data corruption and race conditions.",
+            "difficulty": "Hard",
+            "estimatedMinutes": 50,
+            "keyConcepts": [
+              "Race Condition",
+              "Mutex",
+              "Semaphore",
+              "Deadlock"
+            ]
+          },
+          {
+            "id": "rm-5",
+            "order": 5,
+            "title": "Memory Management",
+            "description": "Understand how the OS allocates RAM to various processes.",
+            "difficulty": "Medium",
+            "estimatedMinutes": 40,
+            "keyConcepts": [
+              "Paging",
+              "Segmentation",
+              "Virtual Memory"
+            ]
+          },
+          {
+            "id": "rm-6",
+            "order": 6,
+            "title": "Storage and File Systems",
+            "description": "Learn how data is organized and persisted on physical disks.",
+            "difficulty": "Easy",
+            "estimatedMinutes": 25,
+            "keyConcepts": [
+              "File Allocation Methods",
+              "Disk Scheduling",
+              "Inodes"
+            ]
+          }
+        ],
+        "flashcards": [
+          {
+            "id": "fc-1",
+            "topic": "OS Basics",
+            "question": "What is the primary function of the Kernel?",
+            "answer": "The kernel acts as the core component of the OS, managing system resources and providing essential services to software."
+          },
+          {
+            "id": "fc-2",
+            "topic": "Process Management",
+            "question": "What is the main difference between a process and a thread?",
+            "answer": "A process is an independent program in execution with its own memory space, while a thread is a subset of a process that shares the process's resources."
+          },
+          {
+            "id": "fc-3",
+            "topic": "CPU Scheduling",
+            "question": "What is the goal of Round Robin scheduling?",
+            "answer": "To provide fair CPU time to all processes by using a fixed time quantum for each process."
+          },
+          {
+            "id": "fc-4",
+            "topic": "Synchronization",
+            "question": "What is a Race Condition?",
+            "answer": "A situation where the outcome of a process depends on the unpredictable order or timing of other processes accessing shared data."
+          },
+          {
+            "id": "fc-5",
+            "topic": "Synchronization",
+            "question": "What is a Mutex?",
+            "answer": "A mutual exclusion object used to prevent multiple threads from accessing a shared resource simultaneously."
+          },
+          {
+            "id": "fc-6",
+            "topic": "Deadlock",
+            "question": "What are the four necessary conditions for a deadlock?",
+            "answer": "Mutual Exclusion, Hold and Wait, No Preemption, and Circular Wait."
+          },
+          {
+            "id": "fc-7",
+            "topic": "Memory Management",
+            "question": "What is Virtual Memory?",
+            "answer": "A memory management technique that allows the execution of processes that may not be entirely in physical RAM by using disk space."
+          },
+          {
+            "id": "fc-8",
+            "topic": "Memory Management",
+            "question": "What is Paging?",
+            "answer": "A memory management scheme that eliminates the need for contiguous allocation of physical memory by dividing memory into fixed-size blocks."
+          },
+          {
+            "id": "fc-9",
+            "topic": "Storage",
+            "question": "What is an Inode?",
+            "answer": "A data structure in a Unix-style file system that describes a file-system object such as a file or a directory."
+          },
+          {
+            "id": "fc-10",
+            "topic": "OS Basics",
+            "question": "What is a System Call?",
+            "answer": "The programmatic way in which a computer program requests a service from the kernel of the operating system."
+          }
+        ]
+      }
+    }
   }
 ]

@@ -7,9 +7,11 @@ import NotesForm from "../components/generate/NotesForm";
 
 // Service (we'll create this later)
 import { generateContent } from "../services/aiService";
+import { useHistory } from "../context/HistoryContext";
 
 const Generate = () => {
     const navigate = useNavigate();
+    const { addToHistory } = useHistory();
   const [mode, setMode] = useState("topic");
 
   const [topicData, setTopicData] = useState({
@@ -56,9 +58,16 @@ const Generate = () => {
         }
       */
 
+      const historyId = addToHistory({
+        mode,
+        ...(mode === "topic" ? topicData : { notes: notesData.notes }),
+        content: response.content,
+      });
+
       navigate("/results", {
         state: {
             content: response.content,
+            historyId,
         },
       });
     } 

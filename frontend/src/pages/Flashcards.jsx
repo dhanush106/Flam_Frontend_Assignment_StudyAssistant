@@ -3,9 +3,11 @@ import { Navigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import FlashcardDeck from "../components/flashcards/FlashcardDeck";
+import { useHistory } from "../context/HistoryContext";
 
 const Flashcards = () => {
   const { state } = useLocation();
+  const { presentRequest } = useHistory();
 
   useEffect(() => {
     window.scrollTo({
@@ -14,15 +16,20 @@ const Flashcards = () => {
     });
   }, []);
 
+  const resolvedFlashcards =
+    state?.flashcards ||
+    (Array.isArray(presentRequest?.content?.flashcards)
+      ? presentRequest.content.flashcards
+      : null);
+
   if (
-    !state?.flashcards ||
-    !Array.isArray(state.flashcards) ||
-    state.flashcards.length === 0
+    !resolvedFlashcards ||
+    resolvedFlashcards.length === 0
   ) {
     return <Navigate to="/generate" replace />;
   }
 
-  const flashcards = state.flashcards;
+  const flashcards = resolvedFlashcards;
 
   return (
     <motion.main

@@ -20,6 +20,7 @@ const Navbar = () => {
       >
         <NavItem link="/" item="Home" />
 <NavItem link="/generate" item="Generate" />
+<NavItem link="/history" item="History" />
 {/* <NavItem link="/results" item="Results" />
 <NavItem link="/roadmap" item="Roadmap" />
 <NavItem link="/flashcards" item="Flashcards" /> */}

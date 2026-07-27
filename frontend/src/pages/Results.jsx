@@ -12,15 +12,23 @@ import SummaryCard from "../components/results/SummaryCard";
 import StatsCard from "../components/results/StatsCard";
 import RoadmapPreview from "../components/results/RoadmapPreview";
 import FlashcardsPreview from "../components/results/FlashcardPreview";
+import { useHistory } from "../context/HistoryContext";
 
 const Results = () => {
   const { state } = useLocation();
+  const { presentRequest, getById } = useHistory();
 
-  if (!state?.content) {
+  const resolvedContent =
+    state?.content ||
+    (state?.historyId ? getById(state.historyId)?.content : null) ||
+    presentRequest?.content ||
+    null;
+
+  if (!resolvedContent) {
     return <Navigate to="/generate" replace />;
   }
 
-  const { content } = state;
+  const content = resolvedContent;
 
   const metadata = content.metadata || {};
 
