@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-
+import { useNavigate } from "react-router-dom";
 import ModeToggle from "../components/generate/ModeToggle";
 import TopicForm from "../components/generate/TopicForm";
 import NotesForm from "../components/generate/NotesForm";
@@ -9,6 +9,7 @@ import NotesForm from "../components/generate/NotesForm";
 import { generateContent } from "../services/aiService";
 
 const Generate = () => {
+    const navigate = useNavigate();
   const [mode, setMode] = useState("topic");
 
   const [topicData, setTopicData] = useState({
@@ -28,13 +29,10 @@ const Generate = () => {
   const [error, setError] = useState("");
 
 
-  const [result, setResult] = useState(null);
-
   const handleGenerate = async () => {
     try {
       setLoading(true);
       setError("");
-      setResult(null);
 
       const payload =
         mode === "topic"
@@ -58,7 +56,11 @@ const Generate = () => {
         }
       */
 
-      setResult(response.content);
+      navigate("/results", {
+        state: {
+            content: response.content,
+        },
+      });
     } 
     // catch (err) {
     //   setError(
@@ -163,7 +165,7 @@ const Generate = () => {
             </div>
           )}
 
-          {result && (
+          {/* {result && (
             <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
 
               <h2 className="mb-4 text-xl font-bold">
@@ -177,7 +179,7 @@ const Generate = () => {
               </pre>
 
             </div>
-          )}
+          )} */}
 
         </div>
       </motion.div>

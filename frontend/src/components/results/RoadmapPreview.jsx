@@ -2,7 +2,7 @@ import { Route } from "lucide-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-const RoadmapPreview = ({ roadmap }) => {
+const RoadmapPreview = ({ roadmap,flashcards }) => {
 
   const navigate = useNavigate();
 
@@ -52,7 +52,7 @@ const RoadmapPreview = ({ roadmap }) => {
       <button
         onClick={() =>
           navigate("/roadmap", {
-            state: { roadmap },
+            state: { roadmap, flashcards },
           })
         }
         className="mt-8 w-full py-4 rounded-2xl bg-emerald-500 text-white"

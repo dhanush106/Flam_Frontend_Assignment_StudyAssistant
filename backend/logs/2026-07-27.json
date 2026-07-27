@@ -271,5 +271,709 @@
         ]
       }
     }
+  },
+  {
+    "id": "b41bff12-f2f2-4cde-bea7-2379698db404",
+    "timestamp": "2026-07-27T19:01:29.621Z",
+    "status": "success",
+    "execution": {
+      "provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it:free",
+      "responseTimeMs": 173341,
+      "retryCount": 0
+    },
+    "request": {
+      "mode": "topic",
+      "topic": "Operating System",
+      "difficulty": "Intermediate",
+      "depth": "Quick",
+      "roadmap": true,
+      "flashcards": true
+    },
+    "prompt": "\nYou are an expert professor and curriculum designer.\n\nGenerate a structured learning roadmap for the following topic.\n\nStudent Information:\n- Topic: Operating System\n- Current Level: undefined\n- Expected Depth: Quick\n\nRequirements:\n- Generate a detailed learning roadmap.\n- Generate flashcards for revision.\n\nGuidelines:\n\n- The roadmap must progress from beginner concepts to advanced concepts.\n- Each roadmap module should naturally build upon the previous one.\n- Keep explanations concise, clear, and beginner-friendly.\n- Focus on concepts that are important for interviews and practical understanding.\n- Each flashcard should test exactly one important concept.\n- Flashcards should cover concepts from the roadmap.\n- Generate realistic study durations.\n- Use ONLY the allowed difficulty values:\n  - Easy\n  - Medium\n  - Hard\n\nIMPORTANT:\n-You are a JSON generator.\n\nYou MUST respond with ONLY a valid JSON object.\n\nDo NOT include:\n- markdown\n- explanations\n- notes\n- comments\n- code fences\n- greetings\n- extra text\n\nYour entire response must begin with '{' and end with '}'.\n- Return ONLY valid JSON.\n- Do NOT include markdown.\n- Do NOT wrap the response inside ```.\n- Do NOT write explanations before or after the JSON.\n- All IDs must be unique.\n- estimatedMinutes and estimatedCompletionMinutes must be numbers.\n- keyConcepts should contain 2–5 important concepts.\n- Generate between 5 and 8 roadmap modules.\n- Generate between 8 and 12 flashcards.\n\nReturn JSON in EXACTLY this format:\n\n{\n  \"type\": \"topic\",\n  \"metadata\": {\n    \"title\": \"\",\n    \"level\": \"\",\n    \"depth\": \"\",\n    \"estimatedCompletionMinutes\": 0,\n    \"moduleCount\": 0\n  },\n  \"summary\": \"\",\n  \"roadmap\": [\n    {\n      \"id\": \"rm-1\",\n      \"order\": 1,\n      \"title\": \"\",\n      \"description\": \"\",\n      \"difficulty\": \"Easy\",\n      \"estimatedMinutes\": 0,\n      \"keyConcepts\": [\n        \"\",\n        \"\"\n      ]\n    }\n  ],\n  \"flashcards\": [\n    {\n      \"id\": \"fc-1\",\n      \"topic\": \"\",\n      \"question\": \"\",\n      \"answer\": \"\"\n    }\n  ]\n}\n",
+    "response": {
+      "raw": "{\n  \"type\": \"topic\",\n  \"metadata\": {\n    \"title\": \"Operating Systems\",\n    \"level\": \"Beginner\",\n    \"depth\": \"Quick\",\n    \"estimatedCompletionMinutes\": 480,\n    \"moduleCount\": 6\n  },\n  \"summary\": \"A fast-paced overview of Operating System fundamentals, covering process management, memory, storage, and concurrency to prepare for interviews and practical application.\",\n  \"roadmap\": [\n    {\n      \"id\": \"rm-1\",\n      \"order\": 1,\n      \"title\": \"Introduction to OS\",\n      \"description\": \"Understand the core role of an OS as a resource manager and the interface between hardware and user.\",\n      \"difficulty\": \"Easy\",\n      \"estimatedMinutes\": 45,\n      \"keyConcepts\": [\n        \"Kernel vs Shell\",\n        \"System Calls\",\n        \"Interrupts\"\n      ]\n    },\n    {\n      \"id\": \"rm-2\",\n      \"order\": 2,\n      \"title\": \"Process Management\",\n      \"description\": \"Learn how the OS manages executing programs and handles multiple tasks.\",\n      \"difficulty\": \"Medium\",\n      \"estimatedMinutes\": 90,\n      \"keyConcepts\": [\n        \"Process vs Thread\",\n        \"Process Control Block (PCB)\",\n        \"Context Switching\"\n      ]\n    },\n    {\n      \"id\": \"rm-3\",\n      \"order\": 3,\n      \"title\": \"CPU Scheduling\",\n      \"description\": \"Study how the OS decides which process runs next to maximize efficiency.\",\n      \"difficulty\": \"Medium\",\n      \"estimatedMinutes\": 75,\n      \"keyConcepts\": [\n        \"First-Come First-Served (FCFS)\",\n        \"Round Robin\",\n        \"Shortest Job First (SJF)\"\n      ]\n    },\n    {\n      \"id\": \"rm-4\",\n      \"order\": 4,\n      \"title\": \"Concurrency and Deadlocks\",\n      \"description\": \"Explore the challenges of multiple processes accessing shared resources simultaneously.\",\n      \"difficulty\": \"Hard\",\n      \"estimatedMinutes\": 90,\n      \"keyConcepts\": [\n        \"Race Conditions\",\n        \"Mutex vs Semaphore\",\n        \"Deadlock Conditions\"\n      ]\n    },\n    {\n      \"id\": \"rm-5\",\n      \"order\": 5,\n      \"title\": \"Memory Management\",\n      \"description\": \"Understand how the OS allocates RAM and manages virtual memory.\",\n      \"difficulty\": \"Hard\",\n      \"estimatedMinutes\": 90,\n      \"keyConcepts\": [\n        \"Paging\",\n        \"Segmentation\",\n        \"Virtual Memory\"\n      ]\n    },\n    {\n      \"id\": \"rm-6\",\n      \"order\": 6,\n      \"title\": \"Storage and File Systems\",\n      \"description\": \"Learn how data is organized, stored, and retrieved from physical disks.\",\n      \"difficulty\": \"Medium\",\n      \"estimatedMinutes\": 90,\n      \"keyConcepts\": [\n        \"File Allocation Methods\",\n        \"Disk Scheduling\",\n        \"Inodes\"\n      ]\n    }\n  ],\n  \"flashcards\": [\n    {\n      \"id\": \"fc-1\",\n      \"topic\": \"Introduction\",\n      \"question\": \"What is the primary function of the Kernel?\",\n      \"answer\": \"The kernel acts as the core of the OS, managing system resources and providing essential services to software.\"\n    },\n    {\n      \"id\": \"fc-2\",\n      \"topic\": \"Process Management\",\n      \"question\": \"What is the main difference between a process and a thread?\",\n      \"answer\": \"A process is an independent program in execution with its own memory space, while a thread is a subset of a process that shares the same memory space.\"\n    },\n    {\n      \"id\": \"fc-3\",\n      \"topic\": \"CPU Scheduling\",\n      \"question\": \"What is the main disadvantage of First-Come First-Served (FCFS) scheduling?\",\n      \"answer\": \"It can lead to the Convoy Effect, where short processes wait for a long process to finish.\"\n    },\n    {\n      \"id\": \"fc-4\",\n      \"topic\": \"Concurrency\",\n      \"question\": \"What is a Race Condition?\",\n      \"answer\": \"A situation where the final outcome depends on the timing or sequence of uncontrollable events, typically when multiple threads access shared data.\"\n    },\n    {\n      \"id\": \"fc-5\",\n      \"topic\": \"Concurrency\",\n      \"question\": \"What is the difference between a Mutex and a Semaphore?\",\n      \"answer\": \"A Mutex is a locking mechanism used to ensure only one thread accesses a resource, while a Semaphore is a signaling mechanism that allows a specific number of threads.\"\n    },\n    {\n      \"id\": \"fc-6\",\n      \"topic\": \"Deadlocks\",\n      \"question\": \"What are the four necessary conditions for a deadlock to occur?\",\n      \"answer\": \"Mutual Exclusion, Hold and Wait, No Preemption, and Circular Wait.\"\n    },\n    {\n      \"id\": \"fc-7\",\n      \"topic\": \"Memory Management\",\n      \"question\": \"What is Virtual Memory?\",\n      \"answer\": \"A memory management technique that allows the execution of processes that are larger than the physical RAM by using disk space.\"\n    },\n    {\n      \"id\": \"fc-8\",\n      \"topic\": \"Memory Management\",\n      \"question\": \"What is Paging?\",\n      \"answer\": \"A memory management scheme that eliminates the need for contiguous allocation of physical memory by dividing physical memory into fixed-size blocks called frames.\"\n    },\n    {\n      \"id\": \"fc-9\",\n      \"topic\": \"Storage\",\n      \"question\": \"What is an Inode in a file system?\",\n      \"answer\": \"A data structure that stores information about a file (metadata) such as size, owner, and permissions, but not the file name or actual data.\"\n    },\n    {\n      \"id\": \"fc-10\",\n      \"topic\": \"Introduction\",\n      \"question\": \"What is a System Call?\",\n      \"answer\": \"The programmatic way in which a computer program requests a service from the kernel of the operating system.\"\n    }\n  ]\n}",
+      "parsed": {
+        "type": "topic",
+        "metadata": {
+          "title": "Operating Systems",
+          "level": "Beginner",
+          "depth": "Quick",
+          "estimatedCompletionMinutes": 480,
+          "moduleCount": 6
+        },
+        "summary": "A fast-paced overview of Operating System fundamentals, covering process management, memory, storage, and concurrency to prepare for interviews and practical application.",
+        "roadmap": [
+          {
+            "id": "rm-1",
+            "order": 1,
+            "title": "Introduction to OS",
+            "description": "Understand the core role of an OS as a resource manager and the interface between hardware and user.",
+            "difficulty": "Easy",
+            "estimatedMinutes": 45,
+            "keyConcepts": [
+              "Kernel vs Shell",
+              "System Calls",
+              "Interrupts"
+            ]
+          },
+          {
+            "id": "rm-2",
+            "order": 2,
+            "title": "Process Management",
+            "description": "Learn how the OS manages executing programs and handles multiple tasks.",
+            "difficulty": "Medium",
+            "estimatedMinutes": 90,
+            "keyConcepts": [
+              "Process vs Thread",
+              "Process Control Block (PCB)",
+              "Context Switching"
+            ]
+          },
+          {
+            "id": "rm-3",
+            "order": 3,
+            "title": "CPU Scheduling",
+            "description": "Study how the OS decides which process runs next to maximize efficiency.",
+            "difficulty": "Medium",
+            "estimatedMinutes": 75,
+            "keyConcepts": [
+              "First-Come First-Served (FCFS)",
+              "Round Robin",
+              "Shortest Job First (SJF)"
+            ]
+          },
+          {
+            "id": "rm-4",
+            "order": 4,
+            "title": "Concurrency and Deadlocks",
+            "description": "Explore the challenges of multiple processes accessing shared resources simultaneously.",
+            "difficulty": "Hard",
+            "estimatedMinutes": 90,
+            "keyConcepts": [
+              "Race Conditions",
+              "Mutex vs Semaphore",
+              "Deadlock Conditions"
+            ]
+          },
+          {
+            "id": "rm-5",
+            "order": 5,
+            "title": "Memory Management",
+            "description": "Understand how the OS allocates RAM and manages virtual memory.",
+            "difficulty": "Hard",
+            "estimatedMinutes": 90,
+            "keyConcepts": [
+              "Paging",
+              "Segmentation",
+              "Virtual Memory"
+            ]
+          },
+          {
+            "id": "rm-6",
+            "order": 6,
+            "title": "Storage and File Systems",
+            "description": "Learn how data is organized, stored, and retrieved from physical disks.",
+            "difficulty": "Medium",
+            "estimatedMinutes": 90,
+            "keyConcepts": [
+              "File Allocation Methods",
+              "Disk Scheduling",
+              "Inodes"
+            ]
+          }
+        ],
+        "flashcards": [
+          {
+            "id": "fc-1",
+            "topic": "Introduction",
+            "question": "What is the primary function of the Kernel?",
+            "answer": "The kernel acts as the core of the OS, managing system resources and providing essential services to software."
+          },
+          {
+            "id": "fc-2",
+            "topic": "Process Management",
+            "question": "What is the main difference between a process and a thread?",
+            "answer": "A process is an independent program in execution with its own memory space, while a thread is a subset of a process that shares the same memory space."
+          },
+          {
+            "id": "fc-3",
+            "topic": "CPU Scheduling",
+            "question": "What is the main disadvantage of First-Come First-Served (FCFS) scheduling?",
+            "answer": "It can lead to the Convoy Effect, where short processes wait for a long process to finish."
+          },
+          {
+            "id": "fc-4",
+            "topic": "Concurrency",
+            "question": "What is a Race Condition?",
+            "answer": "A situation where the final outcome depends on the timing or sequence of uncontrollable events, typically when multiple threads access shared data."
+          },
+          {
+            "id": "fc-5",
+            "topic": "Concurrency",
+            "question": "What is the difference between a Mutex and a Semaphore?",
+            "answer": "A Mutex is a locking mechanism used to ensure only one thread accesses a resource, while a Semaphore is a signaling mechanism that allows a specific number of threads."
+          },
+          {
+            "id": "fc-6",
+            "topic": "Deadlocks",
+            "question": "What are the four necessary conditions for a deadlock to occur?",
+            "answer": "Mutual Exclusion, Hold and Wait, No Preemption, and Circular Wait."
+          },
+          {
+            "id": "fc-7",
+            "topic": "Memory Management",
+            "question": "What is Virtual Memory?",
+            "answer": "A memory management technique that allows the execution of processes that are larger than the physical RAM by using disk space."
+          },
+          {
+            "id": "fc-8",
+            "topic": "Memory Management",
+            "question": "What is Paging?",
+            "answer": "A memory management scheme that eliminates the need for contiguous allocation of physical memory by dividing physical memory into fixed-size blocks called frames."
+          },
+          {
+            "id": "fc-9",
+            "topic": "Storage",
+            "question": "What is an Inode in a file system?",
+            "answer": "A data structure that stores information about a file (metadata) such as size, owner, and permissions, but not the file name or actual data."
+          },
+          {
+            "id": "fc-10",
+            "topic": "Introduction",
+            "question": "What is a System Call?",
+            "answer": "The programmatic way in which a computer program requests a service from the kernel of the operating system."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "2e4c8335-9788-489e-8aa1-b3ce05105efc",
+    "timestamp": "2026-07-27T19:16:07.844Z",
+    "status": "success",
+    "execution": {
+      "provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it:free",
+      "responseTimeMs": 136355,
+      "retryCount": 0
+    },
+    "request": {
+      "mode": "topic",
+      "topic": "Operating System",
+      "difficulty": "Beginner",
+      "depth": "Quick",
+      "roadmap": true,
+      "flashcards": true
+    },
+    "prompt": "\nYou are an expert professor and curriculum designer.\n\nGenerate a structured learning roadmap for the following topic.\n\nStudent Information:\n- Topic: Operating System\n- Current Level: undefined\n- Expected Depth: Quick\n\nRequirements:\n- Generate a detailed learning roadmap.\n- Generate flashcards for revision.\n\nGuidelines:\n\n- The roadmap must progress from beginner concepts to advanced concepts.\n- Each roadmap module should naturally build upon the previous one.\n- Keep explanations concise, clear, and beginner-friendly.\n- Focus on concepts that are important for interviews and practical understanding.\n- Each flashcard should test exactly one important concept.\n- Flashcards should cover concepts from the roadmap.\n- Generate realistic study durations.\n- Use ONLY the allowed difficulty values:\n  - Easy\n  - Medium\n  - Hard\n\nIMPORTANT:\n-You are a JSON generator.\n\nYou MUST respond with ONLY a valid JSON object.\n\nDo NOT include:\n- markdown\n- explanations\n- notes\n- comments\n- code fences\n- greetings\n- extra text\n\nYour entire response must begin with '{' and end with '}'.\n- Return ONLY valid JSON.\n- Do NOT include markdown.\n- Do NOT wrap the response inside ```.\n- Do NOT write explanations before or after the JSON.\n- All IDs must be unique.\n- estimatedMinutes and estimatedCompletionMinutes must be numbers.\n- keyConcepts should contain 2–5 important concepts.\n- Generate between 5 and 8 roadmap modules.\n- Generate between 8 and 12 flashcards.\n\nReturn JSON in EXACTLY this format:\n\n{\n  \"type\": \"topic\",\n  \"metadata\": {\n    \"title\": \"\",\n    \"level\": \"\",\n    \"depth\": \"\",\n    \"estimatedCompletionMinutes\": 0,\n    \"moduleCount\": 0\n  },\n  \"summary\": \"\",\n  \"roadmap\": [\n    {\n      \"id\": \"rm-1\",\n      \"order\": 1,\n      \"title\": \"\",\n      \"description\": \"\",\n      \"difficulty\": \"Easy\",\n      \"estimatedMinutes\": 0,\n      \"keyConcepts\": [\n        \"\",\n        \"\"\n      ]\n    }\n  ],\n  \"flashcards\": [\n    {\n      \"id\": \"fc-1\",\n      \"topic\": \"\",\n      \"question\": \"\",\n      \"answer\": \"\"\n    }\n  ]\n}\n",
+    "response": {
+      "raw": "{\n  \"type\": \"topic\",\n  \"metadata\": {\n    \"title\": \"Operating Systems\",\n    \"level\": \"Beginner\",\n    \"depth\": \"Quick\",\n    \"estimatedCompletionMinutes\": 480,\n    \"moduleCount\": 6\n  },\n  \"summary\": \"A fast-paced overview of Operating System fundamentals, covering process management, memory, storage, and concurrency to prepare for interviews and practical understanding.\",\n  \"roadmap\": [\n    {\n      \"id\": \"rm-1\",\n      \"order\": 1,\n      \"title\": \"Introduction to OS\",\n      \"description\": \"Understand the core role of an OS as a resource manager and interface between hardware and user.\",\n      \"difficulty\": \"Easy\",\n      \"estimatedMinutes\": 45,\n      \"keyConcepts\": [\n        \"Kernel vs Shell\",\n        \"System Calls\",\n        \"User Mode vs Kernel Mode\"\n      ]\n    },\n    {\n      \"id\": \"rm-2\",\n      \"order\": 2,\n      \"title\": \"Process Management\",\n      \"description\": \"Learn how the OS manages executing programs and handles multiple tasks.\",\n      \"difficulty\": \"Medium\",\n      \"estimatedMinutes\": 90,\n      \"keyConcepts\": [\n        \"Process vs Thread\",\n        \"Process Control Block (PCB)\",\n        \"Context Switching\"\n      ]\n    },\n    {\n      \"id\": \"rm-3\",\n      \"order\": 3,\n      \"title\": \"CPU Scheduling\",\n      \"description\": \"Study how the OS decides which process runs next to maximize efficiency.\",\n      \"difficulty\": \"Medium\",\n      \"estimatedMinutes\": 75,\n      \"keyConcepts\": [\n        \"First-Come First-Served (FCFS)\",\n        \"Round Robin\",\n        \"Shortest Job First (SJF)\"\n      ]\n    },\n    {\n      \"id\": \"rm-4\",\n      \"order\": 4,\n      \"title\": \"Concurrency and Deadlocks\",\n      \"description\": \"Explore how multiple processes interact and how to prevent system freezes.\",\n      \"difficulty\": \"Hard\",\n      \"estimatedMinutes\": 90,\n      \"keyConcepts\": [\n        \"Race Conditions\",\n        \"Mutex and Semaphores\",\n        \"Deadlock Conditions\"\n      ]\n    },\n    {\n      \"id\": \"rm-5\",\n      \"order\": 5,\n      \"title\": \"Memory Management\",\n      \"description\": \"Understand how the OS allocates RAM to different processes.\",\n      \"difficulty\": \"Hard\",\n      \"estimatedMinutes\": 90,\n      \"keyConcepts\": [\n        \"Paging and Segmentation\",\n        \"Virtual Memory\",\n        \"Thrashing\"\n      ]\n    },\n    {\n      \"id\": \"rm-6\",\n      \"order\": 6,\n      \"title\": \"Storage and File Systems\",\n      \"description\": \"Learn how data is organized and persisted on physical disks.\",\n      \"difficulty\": \"Medium\",\n      \"estimatedMinutes\": 90,\n      \"keyConcepts\": [\n        \"File Allocation Methods\",\n        \"Disk Scheduling\",\n        \"Inodes\"\n      ]\n    }\n  ],\n  \"flashcards\": [\n    {\n      \"id\": \"fc-1\",\n      \"topic\": \"Introduction\",\n      \"question\": \"What is the primary function of the Kernel?\",\n      \"answer\": \"The kernel is the core part of the OS that manages system resources and communication between hardware and software.\"\n    },\n    {\n      \"id\": \"fc-2\",\n      \"topic\": \"Process Management\",\n      \"question\": \"What is the main difference between a process and a thread?\",\n      \"answer\": \"A process is an independent program in execution with its own memory space, while a thread is a subset of a process that shares the process's resources.\"\n    },\n    {\n      \"id\": \"fc-3\",\n      \"topic\": \"CPU Scheduling\",\n      \"question\": \"What is the main disadvantage of First-Come First-Served (FCFS) scheduling?\",\n      \"answer\": \"It can lead to the 'Convoy Effect', where short processes wait for a long process to finish, increasing average waiting time.\"\n    },\n    {\n      \"id\": \"fc-4\",\n      \"topic\": \"Concurrency\",\n      \"question\": \"What is a Race Condition?\",\n      \"answer\": \"A situation where multiple processes access and manipulate shared data concurrently, and the final outcome depends on the order of execution.\"\n    },\n    {\n      \"id\": \"fc-5\",\n      \"topic\": \"Concurrency\",\n      \"question\": \"What are the four necessary conditions for a Deadlock to occur?\",\n      \"answer\": \"Mutual Exclusion, Hold and Wait, No Preemption, and Circular Wait.\"\n    },\n    {\n      \"id\": \"fc-6\",\n      \"topic\": \"Memory Management\",\n      \"question\": \"What is Virtual Memory?\",\n      \"answer\": \"A technique that allows the execution of processes that are larger than the physical memory by using disk space as an extension of RAM.\"\n    },\n    {\n      \"id\": \"fc-7\",\n      \"topic\": \"Memory Management\",\n      \"question\": \"What is Thrashing?\",\n      \"answer\": \"A state where the system spends more time swapping pages in and out of memory than executing actual instructions.\"\n    },\n    {\n      \"id\": \"fc-8\",\n      \"topic\": \"Storage\",\n      \"question\": \"What is an Inode in a file system?\",\n      \"answer\": \"A data structure that stores information about a file (metadata) such as size, owner, and permissions, but not the filename or actual data.\"\n    },\n    {\n      \"id\": \"fc-9\",\n      \"topic\": \"Concurrency\",\n      \"question\": \"What is the difference between a Mutex and a Semaphore?\",\n      \"answer\": \"A Mutex is a locking mechanism used to ensure only one thread accesses a resource at a time, while a Semaphore is a signaling mechanism that allows a specific number of threads to access a resource.\"\n    },\n    {\n      \"id\": \"fc-10\",\n      \"topic\": \"Introduction\",\n      \"question\": \"What is a System Call?\",\n      \"answer\": \"A programmatic way in which a computer program requests a service from the kernel of the operating system.\"\n    }\n  ]\n}",
+      "parsed": {
+        "type": "topic",
+        "metadata": {
+          "title": "Operating Systems",
+          "level": "Beginner",
+          "depth": "Quick",
+          "estimatedCompletionMinutes": 480,
+          "moduleCount": 6
+        },
+        "summary": "A fast-paced overview of Operating System fundamentals, covering process management, memory, storage, and concurrency to prepare for interviews and practical understanding.",
+        "roadmap": [
+          {
+            "id": "rm-1",
+            "order": 1,
+            "title": "Introduction to OS",
+            "description": "Understand the core role of an OS as a resource manager and interface between hardware and user.",
+            "difficulty": "Easy",
+            "estimatedMinutes": 45,
+            "keyConcepts": [
+              "Kernel vs Shell",
+              "System Calls",
+              "User Mode vs Kernel Mode"
+            ]
+          },
+          {
+            "id": "rm-2",
+            "order": 2,
+            "title": "Process Management",
+            "description": "Learn how the OS manages executing programs and handles multiple tasks.",
+            "difficulty": "Medium",
+            "estimatedMinutes": 90,
+            "keyConcepts": [
+              "Process vs Thread",
+              "Process Control Block (PCB)",
+              "Context Switching"
+            ]
+          },
+          {
+            "id": "rm-3",
+            "order": 3,
+            "title": "CPU Scheduling",
+            "description": "Study how the OS decides which process runs next to maximize efficiency.",
+            "difficulty": "Medium",
+            "estimatedMinutes": 75,
+            "keyConcepts": [
+              "First-Come First-Served (FCFS)",
+              "Round Robin",
+              "Shortest Job First (SJF)"
+            ]
+          },
+          {
+            "id": "rm-4",
+            "order": 4,
+            "title": "Concurrency and Deadlocks",
+            "description": "Explore how multiple processes interact and how to prevent system freezes.",
+            "difficulty": "Hard",
+            "estimatedMinutes": 90,
+            "keyConcepts": [
+              "Race Conditions",
+              "Mutex and Semaphores",
+              "Deadlock Conditions"
+            ]
+          },
+          {
+            "id": "rm-5",
+            "order": 5,
+            "title": "Memory Management",
+            "description": "Understand how the OS allocates RAM to different processes.",
+            "difficulty": "Hard",
+            "estimatedMinutes": 90,
+            "keyConcepts": [
+              "Paging and Segmentation",
+              "Virtual Memory",
+              "Thrashing"
+            ]
+          },
+          {
+            "id": "rm-6",
+            "order": 6,
+            "title": "Storage and File Systems",
+            "description": "Learn how data is organized and persisted on physical disks.",
+            "difficulty": "Medium",
+            "estimatedMinutes": 90,
+            "keyConcepts": [
+              "File Allocation Methods",
+              "Disk Scheduling",
+              "Inodes"
+            ]
+          }
+        ],
+        "flashcards": [
+          {
+            "id": "fc-1",
+            "topic": "Introduction",
+            "question": "What is the primary function of the Kernel?",
+            "answer": "The kernel is the core part of the OS that manages system resources and communication between hardware and software."
+          },
+          {
+            "id": "fc-2",
+            "topic": "Process Management",
+            "question": "What is the main difference between a process and a thread?",
+            "answer": "A process is an independent program in execution with its own memory space, while a thread is a subset of a process that shares the process's resources."
+          },
+          {
+            "id": "fc-3",
+            "topic": "CPU Scheduling",
+            "question": "What is the main disadvantage of First-Come First-Served (FCFS) scheduling?",
+            "answer": "It can lead to the 'Convoy Effect', where short processes wait for a long process to finish, increasing average waiting time."
+          },
+          {
+            "id": "fc-4",
+            "topic": "Concurrency",
+            "question": "What is a Race Condition?",
+            "answer": "A situation where multiple processes access and manipulate shared data concurrently, and the final outcome depends on the order of execution."
+          },
+          {
+            "id": "fc-5",
+            "topic": "Concurrency",
+            "question": "What are the four necessary conditions for a Deadlock to occur?",
+            "answer": "Mutual Exclusion, Hold and Wait, No Preemption, and Circular Wait."
+          },
+          {
+            "id": "fc-6",
+            "topic": "Memory Management",
+            "question": "What is Virtual Memory?",
+            "answer": "A technique that allows the execution of processes that are larger than the physical memory by using disk space as an extension of RAM."
+          },
+          {
+            "id": "fc-7",
+            "topic": "Memory Management",
+            "question": "What is Thrashing?",
+            "answer": "A state where the system spends more time swapping pages in and out of memory than executing actual instructions."
+          },
+          {
+            "id": "fc-8",
+            "topic": "Storage",
+            "question": "What is an Inode in a file system?",
+            "answer": "A data structure that stores information about a file (metadata) such as size, owner, and permissions, but not the filename or actual data."
+          },
+          {
+            "id": "fc-9",
+            "topic": "Concurrency",
+            "question": "What is the difference between a Mutex and a Semaphore?",
+            "answer": "A Mutex is a locking mechanism used to ensure only one thread accesses a resource at a time, while a Semaphore is a signaling mechanism that allows a specific number of threads to access a resource."
+          },
+          {
+            "id": "fc-10",
+            "topic": "Introduction",
+            "question": "What is a System Call?",
+            "answer": "A programmatic way in which a computer program requests a service from the kernel of the operating system."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "361f650a-360a-4b17-bee2-9fc942363d63",
+    "timestamp": "2026-07-27T19:25:02.418Z",
+    "status": "success",
+    "execution": {
+      "provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it:free",
+      "responseTimeMs": 90804,
+      "retryCount": 0
+    },
+    "request": {
+      "mode": "topic",
+      "topic": "Operating System",
+      "difficulty": "Beginner",
+      "depth": "Quick",
+      "roadmap": true,
+      "flashcards": false
+    },
+    "prompt": "\nYou are an expert professor and curriculum designer.\n\nGenerate a structured learning roadmap for the following topic.\n\nStudent Information:\n- Topic: Operating System\n- Current Level: undefined\n- Expected Depth: Quick\n\nRequirements:\n- Generate a detailed learning roadmap.\n\n\nGuidelines:\n\n- The roadmap must progress from beginner concepts to advanced concepts.\n- Each roadmap module should naturally build upon the previous one.\n- Keep explanations concise, clear, and beginner-friendly.\n- Focus on concepts that are important for interviews and practical understanding.\n- Each flashcard should test exactly one important concept.\n- Flashcards should cover concepts from the roadmap.\n- Generate realistic study durations.\n- Use ONLY the allowed difficulty values:\n  - Easy\n  - Medium\n  - Hard\n\nIMPORTANT:\n-You are a JSON generator.\n\nYou MUST respond with ONLY a valid JSON object.\n\nDo NOT include:\n- markdown\n- explanations\n- notes\n- comments\n- code fences\n- greetings\n- extra text\n\nYour entire response must begin with '{' and end with '}'.\n- Return ONLY valid JSON.\n- Do NOT include markdown.\n- Do NOT wrap the response inside ```.\n- Do NOT write explanations before or after the JSON.\n- All IDs must be unique.\n- estimatedMinutes and estimatedCompletionMinutes must be numbers.\n- keyConcepts should contain 2–5 important concepts.\n- Generate between 5 and 8 roadmap modules.\n- Generate between 8 and 12 flashcards.\n\nReturn JSON in EXACTLY this format:\n\n{\n  \"type\": \"topic\",\n  \"metadata\": {\n    \"title\": \"\",\n    \"level\": \"\",\n    \"depth\": \"\",\n    \"estimatedCompletionMinutes\": 0,\n    \"moduleCount\": 0\n  },\n  \"summary\": \"\",\n  \"roadmap\": [\n    {\n      \"id\": \"rm-1\",\n      \"order\": 1,\n      \"title\": \"\",\n      \"description\": \"\",\n      \"difficulty\": \"Easy\",\n      \"estimatedMinutes\": 0,\n      \"keyConcepts\": [\n        \"\",\n        \"\"\n      ]\n    }\n  ],\n  \"flashcards\": [\n    {\n      \"id\": \"fc-1\",\n      \"topic\": \"\",\n      \"question\": \"\",\n      \"answer\": \"\"\n    }\n  ]\n}\n",
+    "response": {
+      "raw": "{\n  \"type\": \"topic\",\n  \"metadata\": {\n    \"title\": \"Operating Systems\",\n    \"level\": \"Beginner\",\n    \"depth\": \"Quick\",\n    \"estimatedCompletionMinutes\": 360,\n    \"moduleCount\": 6\n  },\n  \"summary\": \"A fast-paced overview of Operating System fundamentals, covering process management, memory, storage, and concurrency, designed for quick comprehension and interview preparation.\",\n  \"roadmap\": [\n    {\n      \"id\": \"rm-1\",\n      \"order\": 1,\n      \"title\": \"Introduction to OS\",\n      \"description\": \"Understanding the role of an OS as a resource manager and the interface between hardware and user.\",\n      \"difficulty\": \"Easy\",\n      \"estimatedMinutes\": 45,\n      \"keyConcepts\": [\n        \"Kernel vs Shell\",\n        \"System Calls\",\n        \"Interrupts\"\n      ]\n    },\n    {\n      \"id\": \"rm-2\",\n      \"order\": 2,\n      \"title\": \"Process Management\",\n      \"description\": \"How the OS manages executing programs and handles multiple tasks.\",\n      \"difficulty\": \"Medium\",\n      \"estimatedMinutes\": 60,\n      \"keyConcepts\": [\n        \"Process vs Thread\",\n        \"Process Control Block (PCB)\",\n        \"Context Switching\"\n      ]\n    },\n    {\n      \"id\": \"rm-3\",\n      \"order\": 3,\n      \"title\": \"CPU Scheduling\",\n      \"description\": \"Algorithms used by the OS to decide which process runs next on the CPU.\",\n      \"difficulty\": \"Medium\",\n      \"estimatedMinutes\": 60,\n      \"keyConcepts\": [\n        \"First-Come-First-Served (FCFS)\",\n        \"Round Robin\",\n        \"Shortest Job First (SJF)\"\n      ]\n    },\n    {\n      \"id\": \"rm-4\",\n      \"order\": 4,\n      \"title\": \"Concurrency and Deadlocks\",\n      \"description\": \"Managing simultaneous execution and preventing system freezes.\",\n      \"difficulty\": \"Hard\",\n      \"estimatedMinutes\": 75,\n      \"keyConcepts\": [\n        \"Race Conditions\",\n        \"Mutex vs Semaphore\",\n        \"Deadlock Conditions\"\n      ]\n    },\n    {\n      \"id\": \"rm-5\",\n      \"order\": 5,\n      \"title\": \"Memory Management\",\n      \"description\": \"How the OS allocates and manages RAM for various processes.\",\n      \"difficulty\": \"Hard\",\n      \"estimatedMinutes\": 60,\n      \"keyConcepts\": [\n        \"Paging\",\n        \"Segmentation\",\n        \"Virtual Memory\"\n      ]\n    },\n    {\n      \"id\": \"rm-6\",\n      \"order\": 6,\n      \"title\": \"Storage and File Systems\",\n      \"description\": \"How data is organized and persisted on physical disks.\",\n      \"difficulty\": \"Medium\",\n      \"estimatedMinutes\": 60,\n      \"keyConcepts\": [\n        \"File Allocation Methods\",\n        \"Disk Scheduling\",\n        \"Inodes\"\n      ]\n    }\n  ],\n  \"flashcards\": [\n    {\n      \"id\": \"fc-1\",\n      \"topic\": \"Introduction\",\n      \"question\": \"What is the primary function of the Kernel?\",\n      \"answer\": \"The kernel acts as the core component of the OS, managing system resources and communication between hardware and software.\"\n    },\n    {\n      \"id\": \"fc-2\",\n      \"topic\": \"Process Management\",\n      \"question\": \"What is the main difference between a process and a thread?\",\n      \"answer\": \"A process is an independent program in execution with its own memory space, while a thread is a subset of a process that shares the same memory space.\"\n    },\n    {\n      \"id\": \"fc-3\",\n      \"topic\": \"Process Management\",\n      \"question\": \"What is context switching?\",\n      \"answer\": \"The process of storing the state of a process or thread so that it can be restored and execution resumed from the same point later.\"\n    },\n    {\n      \"id\": \"fc-4\",\n      \"topic\": \"CPU Scheduling\",\n      \"question\": \"What is the main disadvantage of First-Come-First-Served (FCFS) scheduling?\",\n      \"answer\": \"It can lead to the 'Convoy Effect', where short processes wait for a long process to finish, increasing average waiting time.\"\n    },\n    {\n      \"id\": \"fc-5\",\n      \"topic\": \"Concurrency\",\n      \"question\": \"What is a Race Condition?\",\n      \"answer\": \"A situation where the outcome of a process depends on the unpredictable order or timing of other processes accessing shared data.\"\n    },\n    {\n      \"id\": \"fc-6\",\n      \"topic\": \"Concurrency\",\n      \"question\": \"What is the difference between a Mutex and a Semaphore?\",\n      \"answer\": \"A Mutex is a locking mechanism used to ensure only one thread accesses a resource at a time, while a Semaphore is a signaling mechanism that allows a specific number of threads.\"\n    },\n    {\n      \"id\": \"fc-7\",\n      \"topic\": \"Deadlocks\",\n      \"question\": \"What are the four necessary conditions for a deadlock to occur?\",\n      \"answer\": \"Mutual Exclusion, Hold and Wait, No Preemption, and Circular Wait.\"\n    },\n    {\n      \"id\": \"fc-8\",\n      \"topic\": \"Memory Management\",\n      \"question\": \"What is Virtual Memory?\",\n      \"answer\": \"A memory management technique that uses hardware and software to allow a computer to compensate for physical memory shortages by temporarily transferring data from RAM to disk storage.\"\n    },\n    {\n      \"id\": \"fc-9\",\n      \"topic\": \"Memory Management\",\n      \"question\": \"What is Paging?\",\n      \"answer\": \"A memory management scheme that eliminates the need for contiguous allocation of physical memory by dividing physical memory into fixed-size blocks called frames and logical memory into blocks called pages.\"\n    },\n    {\n      \"id\": \"fc-10\",\n      \"topic\": \"Storage\",\n      \"question\": \"What is an Inode in a file system?\",\n      \"answer\": \"A data structure used to store metadata about a file, such as size, owner, and disk block locations, but not the filename or actual data.\"\n    }\n  ]\n}",
+      "parsed": {
+        "type": "topic",
+        "metadata": {
+          "title": "Operating Systems",
+          "level": "Beginner",
+          "depth": "Quick",
+          "estimatedCompletionMinutes": 360,
+          "moduleCount": 6
+        },
+        "summary": "A fast-paced overview of Operating System fundamentals, covering process management, memory, storage, and concurrency, designed for quick comprehension and interview preparation.",
+        "roadmap": [
+          {
+            "id": "rm-1",
+            "order": 1,
+            "title": "Introduction to OS",
+            "description": "Understanding the role of an OS as a resource manager and the interface between hardware and user.",
+            "difficulty": "Easy",
+            "estimatedMinutes": 45,
+            "keyConcepts": [
+              "Kernel vs Shell",
+              "System Calls",
+              "Interrupts"
+            ]
+          },
+          {
+            "id": "rm-2",
+            "order": 2,
+            "title": "Process Management",
+            "description": "How the OS manages executing programs and handles multiple tasks.",
+            "difficulty": "Medium",
+            "estimatedMinutes": 60,
+            "keyConcepts": [
+              "Process vs Thread",
+              "Process Control Block (PCB)",
+              "Context Switching"
+            ]
+          },
+          {
+            "id": "rm-3",
+            "order": 3,
+            "title": "CPU Scheduling",
+            "description": "Algorithms used by the OS to decide which process runs next on the CPU.",
+            "difficulty": "Medium",
+            "estimatedMinutes": 60,
+            "keyConcepts": [
+              "First-Come-First-Served (FCFS)",
+              "Round Robin",
+              "Shortest Job First (SJF)"
+            ]
+          },
+          {
+            "id": "rm-4",
+            "order": 4,
+            "title": "Concurrency and Deadlocks",
+            "description": "Managing simultaneous execution and preventing system freezes.",
+            "difficulty": "Hard",
+            "estimatedMinutes": 75,
+            "keyConcepts": [
+              "Race Conditions",
+              "Mutex vs Semaphore",
+              "Deadlock Conditions"
+            ]
+          },
+          {
+            "id": "rm-5",
+            "order": 5,
+            "title": "Memory Management",
+            "description": "How the OS allocates and manages RAM for various processes.",
+            "difficulty": "Hard",
+            "estimatedMinutes": 60,
+            "keyConcepts": [
+              "Paging",
+              "Segmentation",
+              "Virtual Memory"
+            ]
+          },
+          {
+            "id": "rm-6",
+            "order": 6,
+            "title": "Storage and File Systems",
+            "description": "How data is organized and persisted on physical disks.",
+            "difficulty": "Medium",
+            "estimatedMinutes": 60,
+            "keyConcepts": [
+              "File Allocation Methods",
+              "Disk Scheduling",
+              "Inodes"
+            ]
+          }
+        ],
+        "flashcards": [
+          {
+            "id": "fc-1",
+            "topic": "Introduction",
+            "question": "What is the primary function of the Kernel?",
+            "answer": "The kernel acts as the core component of the OS, managing system resources and communication between hardware and software."
+          },
+          {
+            "id": "fc-2",
+            "topic": "Process Management",
+            "question": "What is the main difference between a process and a thread?",
+            "answer": "A process is an independent program in execution with its own memory space, while a thread is a subset of a process that shares the same memory space."
+          },
+          {
+            "id": "fc-3",
+            "topic": "Process Management",
+            "question": "What is context switching?",
+            "answer": "The process of storing the state of a process or thread so that it can be restored and execution resumed from the same point later."
+          },
+          {
+            "id": "fc-4",
+            "topic": "CPU Scheduling",
+            "question": "What is the main disadvantage of First-Come-First-Served (FCFS) scheduling?",
+            "answer": "It can lead to the 'Convoy Effect', where short processes wait for a long process to finish, increasing average waiting time."
+          },
+          {
+            "id": "fc-5",
+            "topic": "Concurrency",
+            "question": "What is a Race Condition?",
+            "answer": "A situation where the outcome of a process depends on the unpredictable order or timing of other processes accessing shared data."
+          },
+          {
+            "id": "fc-6",
+            "topic": "Concurrency",
+            "question": "What is the difference between a Mutex and a Semaphore?",
+            "answer": "A Mutex is a locking mechanism used to ensure only one thread accesses a resource at a time, while a Semaphore is a signaling mechanism that allows a specific number of threads."
+          },
+          {
+            "id": "fc-7",
+            "topic": "Deadlocks",
+            "question": "What are the four necessary conditions for a deadlock to occur?",
+            "answer": "Mutual Exclusion, Hold and Wait, No Preemption, and Circular Wait."
+          },
+          {
+            "id": "fc-8",
+            "topic": "Memory Management",
+            "question": "What is Virtual Memory?",
+            "answer": "A memory management technique that uses hardware and software to allow a computer to compensate for physical memory shortages by temporarily transferring data from RAM to disk storage."
+          },
+          {
+            "id": "fc-9",
+            "topic": "Memory Management",
+            "question": "What is Paging?",
+            "answer": "A memory management scheme that eliminates the need for contiguous allocation of physical memory by dividing physical memory into fixed-size blocks called frames and logical memory into blocks called pages."
+          },
+          {
+            "id": "fc-10",
+            "topic": "Storage",
+            "question": "What is an Inode in a file system?",
+            "answer": "A data structure used to store metadata about a file, such as size, owner, and disk block locations, but not the filename or actual data."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "c24be811-07da-4a46-b3ff-94050791d5fe",
+    "timestamp": "2026-07-27T19:29:19.968Z",
+    "status": "success",
+    "execution": {
+      "provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it:free",
+      "responseTimeMs": 159726,
+      "retryCount": 0
+    },
+    "request": {
+      "mode": "topic",
+      "topic": "Operating System",
+      "difficulty": "Beginner",
+      "depth": "Quick",
+      "roadmap": true,
+      "flashcards": true
+    },
+    "prompt": "\nYou are an expert professor and curriculum designer.\n\nGenerate a structured learning roadmap for the following topic.\n\nStudent Information:\n- Topic: Operating System\n- Current Level: undefined\n- Expected Depth: Quick\n\nRequirements:\n- Generate a detailed learning roadmap.\n- Generate flashcards for revision.\n\nGuidelines:\n\n- The roadmap must progress from beginner concepts to advanced concepts.\n- Each roadmap module should naturally build upon the previous one.\n- Keep explanations concise, clear, and beginner-friendly.\n- Focus on concepts that are important for interviews and practical understanding.\n- Each flashcard should test exactly one important concept.\n- Flashcards should cover concepts from the roadmap.\n- Generate realistic study durations.\n- Use ONLY the allowed difficulty values:\n  - Easy\n  - Medium\n  - Hard\n\nIMPORTANT:\n-You are a JSON generator.\n\nYou MUST respond with ONLY a valid JSON object.\n\nDo NOT include:\n- markdown\n- explanations\n- notes\n- comments\n- code fences\n- greetings\n- extra text\n\nYour entire response must begin with '{' and end with '}'.\n- Return ONLY valid JSON.\n- Do NOT include markdown.\n- Do NOT wrap the response inside ```.\n- Do NOT write explanations before or after the JSON.\n- All IDs must be unique.\n- estimatedMinutes and estimatedCompletionMinutes must be numbers.\n- keyConcepts should contain 2–5 important concepts.\n- Generate between 5 and 8 roadmap modules.\n- Generate between 8 and 12 flashcards.\n\nReturn JSON in EXACTLY this format:\n\n{\n  \"type\": \"topic\",\n  \"metadata\": {\n    \"title\": \"\",\n    \"level\": \"\",\n    \"depth\": \"\",\n    \"estimatedCompletionMinutes\": 0,\n    \"moduleCount\": 0\n  },\n  \"summary\": \"\",\n  \"roadmap\": [\n    {\n      \"id\": \"rm-1\",\n      \"order\": 1,\n      \"title\": \"\",\n      \"description\": \"\",\n      \"difficulty\": \"Easy\",\n      \"estimatedMinutes\": 0,\n      \"keyConcepts\": [\n        \"\",\n        \"\"\n      ]\n    }\n  ],\n  \"flashcards\": [\n    {\n      \"id\": \"fc-1\",\n      \"topic\": \"\",\n      \"question\": \"\",\n      \"answer\": \"\"\n    }\n  ]\n}\n",
+    "response": {
+      "raw": "{\n  \"type\": \"topic\",\n  \"metadata\": {\n    \"title\": \"Operating Systems\",\n    \"level\": \"Beginner\",\n    \"depth\": \"Quick\",\n    \"estimatedCompletionMinutes\": 480,\n    \"moduleCount\": 6\n  },\n  \"summary\": \"A fast-paced overview of Operating System fundamentals, covering process management, memory, storage, and concurrency to prepare for interviews and practical application.\",\n  \"roadmap\": [\n    {\n      \"id\": \"rm-1\",\n      \"order\": 1,\n      \"title\": \"Introduction to OS\",\n      \"description\": \"Understand the role of an OS as a resource manager and the interface between hardware and user.\",\n      \"difficulty\": \"Easy\",\n      \"estimatedMinutes\": 45,\n      \"keyConcepts\": [\n        \"Kernel vs Shell\",\n        \"System Calls\",\n        \"Interrupts\"\n      ]\n    },\n    {\n      \"id\": \"rm-2\",\n      \"order\": 2,\n      \"title\": \"Process Management\",\n      \"description\": \"Learn how the OS manages executing programs and handles multiple tasks.\",\n      \"difficulty\": \"Medium\",\n      \"estimatedMinutes\": 90,\n      \"keyConcepts\": [\n        \"Process vs Thread\",\n        \"Process Control Block (PCB)\",\n        \"Context Switching\"\n      ]\n    },\n    {\n      \"id\": \"rm-3\",\n      \"order\": 3,\n      \"title\": \"CPU Scheduling\",\n      \"description\": \"Study how the OS decides which process runs next to maximize efficiency.\",\n      \"difficulty\": \"Medium\",\n      \"estimatedMinutes\": 75,\n      \"keyConcepts\": [\n        \"First-Come First-Served (FCFS)\",\n        \"Round Robin\",\n        \"Shortest Job First (SJF)\"\n      ]\n    },\n    {\n      \"id\": \"rm-4\",\n      \"order\": 4,\n      \"title\": \"Concurrency and Deadlocks\",\n      \"description\": \"Explore how processes interact and how to prevent system freezes.\",\n      \"difficulty\": \"Hard\",\n      \"estimatedMinutes\": 90,\n      \"keyConcepts\": [\n        \"Race Conditions\",\n        \"Mutex vs Semaphore\",\n        \"Deadlock Conditions\"\n      ]\n    },\n    {\n      \"id\": \"rm-5\",\n      \"order\": 5,\n      \"title\": \"Memory Management\",\n      \"description\": \"Understand how the OS allocates RAM and manages virtual memory.\",\n      \"difficulty\": \"Hard\",\n      \"estimatedMinutes\": 90,\n      \"keyConcepts\": [\n        \"Paging\",\n        \"Segmentation\",\n        \"Virtual Memory\"\n      ]\n    },\n    {\n      \"id\": \"rm-6\",\n      \"order\": 6,\n      \"title\": \"Storage and File Systems\",\n      \"description\": \"Learn how data is organized and persisted on physical disks.\",\n      \"difficulty\": \"Medium\",\n      \"estimatedMinutes\": 90,\n      \"keyConcepts\": [\n        \"File Allocation Methods\",\n        \"Disk Scheduling\",\n        \"Inodes\"\n      ]\n    }\n  ],\n  \"flashcards\": [\n    {\n      \"id\": \"fc-1\",\n      \"topic\": \"Introduction\",\n      \"question\": \"What is the primary function of the Kernel?\",\n      \"answer\": \"The kernel acts as the core component of an OS, managing system resources and communication between hardware and software.\"\n    },\n    {\n      \"id\": \"fc-2\",\n      \"topic\": \"Process Management\",\n      \"question\": \"What is the main difference between a process and a thread?\",\n      \"answer\": \"A process is an independent program in execution with its own memory space, while a thread is a subset of a process that shares the same memory space.\"\n    },\n    {\n      \"id\": \"fc-3\",\n      \"topic\": \"Process Management\",\n      \"question\": \"What is context switching?\",\n      \"answer\": \"The process of storing the state of a process or thread so that it can be restored and execution resumed from the same point later.\"\n    },\n    {\n      \"id\": \"fc-4\",\n      \"topic\": \"CPU Scheduling\",\n      \"question\": \"What is the main disadvantage of First-Come First-Served (FCFS) scheduling?\",\n      \"answer\": \"It can lead to the 'Convoy Effect', where short processes wait for a long process to finish.\"\n    },\n    {\n      \"id\": \"fc-5\",\n      \"topic\": \"Concurrency\",\n      \"question\": \"What is a deadlock?\",\n      \"answer\": \"A situation where a set of processes are blocked because each process is holding a resource and waiting for another resource held by another process.\"\n    },\n    {\n      \"id\": \"fc-6\",\n      \"topic\": \"Concurrency\",\n      \"question\": \"What is the difference between a Mutex and a Semaphore?\",\n      \"answer\": \"A Mutex is a locking mechanism used to ensure only one thread accesses a resource at a time, while a Semaphore is a signaling mechanism that allows a specific number of threads to access a resource.\"\n    },\n    {\n      \"id\": \"fc-7\",\n      \"topic\": \"Memory Management\",\n      \"question\": \"What is Virtual Memory?\",\n      \"answer\": \"A memory management technique that allows the execution of processes that may not be entirely in the physical RAM by using disk space.\"\n    },\n    {\n      \"id\": \"fc-8\",\n      \"topic\": \"Memory Management\",\n      \"question\": \"What is Paging?\",\n      \"answer\": \"A memory management scheme that eliminates the need for contiguous allocation of physical memory by dividing physical memory into fixed-size blocks called frames.\"\n    },\n    {\n      \"id\": \"fc-9\",\n      \"topic\": \"Storage\",\n      \"question\": \"What is an Inode in a file system?\",\n      \"answer\": \"A data structure used to store information about a file, such as size, owner, and disk block locations, but not the filename or actual data.\"\n    },\n    {\n      \"id\": \"fc-10\",\n      \"topic\": \"Concurrency\",\n      \"question\": \"What is a Race Condition?\",\n      \"answer\": \"A situation where the output of a process depends on the sequence or timing of other uncontrollable events.\"\n    }\n  ]\n}",
+      "parsed": {
+        "type": "topic",
+        "metadata": {
+          "title": "Operating Systems",
+          "level": "Beginner",
+          "depth": "Quick",
+          "estimatedCompletionMinutes": 480,
+          "moduleCount": 6
+        },
+        "summary": "A fast-paced overview of Operating System fundamentals, covering process management, memory, storage, and concurrency to prepare for interviews and practical application.",
+        "roadmap": [
+          {
+            "id": "rm-1",
+            "order": 1,
+            "title": "Introduction to OS",
+            "description": "Understand the role of an OS as a resource manager and the interface between hardware and user.",
+            "difficulty": "Easy",
+            "estimatedMinutes": 45,
+            "keyConcepts": [
+              "Kernel vs Shell",
+              "System Calls",
+              "Interrupts"
+            ]
+          },
+          {
+            "id": "rm-2",
+            "order": 2,
+            "title": "Process Management",
+            "description": "Learn how the OS manages executing programs and handles multiple tasks.",
+            "difficulty": "Medium",
+            "estimatedMinutes": 90,
+            "keyConcepts": [
+              "Process vs Thread",
+              "Process Control Block (PCB)",
+              "Context Switching"
+            ]
+          },
+          {
+            "id": "rm-3",
+            "order": 3,
+            "title": "CPU Scheduling",
+            "description": "Study how the OS decides which process runs next to maximize efficiency.",
+            "difficulty": "Medium",
+            "estimatedMinutes": 75,
+            "keyConcepts": [
+              "First-Come First-Served (FCFS)",
+              "Round Robin",
+              "Shortest Job First (SJF)"
+            ]
+          },
+          {
+            "id": "rm-4",
+            "order": 4,
+            "title": "Concurrency and Deadlocks",
+            "description": "Explore how processes interact and how to prevent system freezes.",
+            "difficulty": "Hard",
+            "estimatedMinutes": 90,
+            "keyConcepts": [
+              "Race Conditions",
+              "Mutex vs Semaphore",
+              "Deadlock Conditions"
+            ]
+          },
+          {
+            "id": "rm-5",
+            "order": 5,
+            "title": "Memory Management",
+            "description": "Understand how the OS allocates RAM and manages virtual memory.",
+            "difficulty": "Hard",
+            "estimatedMinutes": 90,
+            "keyConcepts": [
+              "Paging",
+              "Segmentation",
+              "Virtual Memory"
+            ]
+          },
+          {
+            "id": "rm-6",
+            "order": 6,
+            "title": "Storage and File Systems",
+            "description": "Learn how data is organized and persisted on physical disks.",
+            "difficulty": "Medium",
+            "estimatedMinutes": 90,
+            "keyConcepts": [
+              "File Allocation Methods",
+              "Disk Scheduling",
+              "Inodes"
+            ]
+          }
+        ],
+        "flashcards": [
+          {
+            "id": "fc-1",
+            "topic": "Introduction",
+            "question": "What is the primary function of the Kernel?",
+            "answer": "The kernel acts as the core component of an OS, managing system resources and communication between hardware and software."
+          },
+          {
+            "id": "fc-2",
+            "topic": "Process Management",
+            "question": "What is the main difference between a process and a thread?",
+            "answer": "A process is an independent program in execution with its own memory space, while a thread is a subset of a process that shares the same memory space."
+          },
+          {
+            "id": "fc-3",
+            "topic": "Process Management",
+            "question": "What is context switching?",
+            "answer": "The process of storing the state of a process or thread so that it can be restored and execution resumed from the same point later."
+          },
+          {
+            "id": "fc-4",
+            "topic": "CPU Scheduling",
+            "question": "What is the main disadvantage of First-Come First-Served (FCFS) scheduling?",
+            "answer": "It can lead to the 'Convoy Effect', where short processes wait for a long process to finish."
+          },
+          {
+            "id": "fc-5",
+            "topic": "Concurrency",
+            "question": "What is a deadlock?",
+            "answer": "A situation where a set of processes are blocked because each process is holding a resource and waiting for another resource held by another process."
+          },
+          {
+            "id": "fc-6",
+            "topic": "Concurrency",
+            "question": "What is the difference between a Mutex and a Semaphore?",
+            "answer": "A Mutex is a locking mechanism used to ensure only one thread accesses a resource at a time, while a Semaphore is a signaling mechanism that allows a specific number of threads to access a resource."
+          },
+          {
+            "id": "fc-7",
+            "topic": "Memory Management",
+            "question": "What is Virtual Memory?",
+            "answer": "A memory management technique that allows the execution of processes that may not be entirely in the physical RAM by using disk space."
+          },
+          {
+            "id": "fc-8",
+            "topic": "Memory Management",
+            "question": "What is Paging?",
+            "answer": "A memory management scheme that eliminates the need for contiguous allocation of physical memory by dividing physical memory into fixed-size blocks called frames."
+          },
+          {
+            "id": "fc-9",
+            "topic": "Storage",
+            "question": "What is an Inode in a file system?",
+            "answer": "A data structure used to store information about a file, such as size, owner, and disk block locations, but not the filename or actual data."
+          },
+          {
+            "id": "fc-10",
+            "topic": "Concurrency",
+            "question": "What is a Race Condition?",
+            "answer": "A situation where the output of a process depends on the sequence or timing of other uncontrollable events."
+          }
+        ]
+      }
+    }
   }
 ]

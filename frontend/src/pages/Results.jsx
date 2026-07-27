@@ -11,7 +11,7 @@ import {
 import SummaryCard from "../components/results/SummaryCard";
 import StatsCard from "../components/results/StatsCard";
 import RoadmapPreview from "../components/results/RoadmapPreview";
-import FlashcardsPreview from "../components/results/FlashcardsPreview";
+import FlashcardsPreview from "../components/results/FlashcardPreview";
 
 const Results = () => {
   const { state } = useLocation();
@@ -88,6 +88,7 @@ const Results = () => {
 
           <RoadmapPreview
             roadmap={content.roadmap}
+            flashcards={content.flashcards}
           />
 
           <FlashcardsPreview
