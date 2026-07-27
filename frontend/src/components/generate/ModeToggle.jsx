@@ -1,47 +1,53 @@
+import { motion } from "framer-motion";
+
 const ModeToggle = ({ mode, setMode }) => {
+
   return (
-    <div className="grid grid-cols-2 rounded-2xl bg-slate-100 p-1.5">
+
+    <div className="relative grid grid-cols-2 rounded-2xl bg-slate-100 p-1">
+
+      {mode === "topic" && (
+        <motion.div
+          layoutId="active-pill"
+          className="absolute inset-y-1 left-1 w-[calc(50%-4px)] rounded-xl bg-white shadow-md"
+          transition={{
+            type: "spring",
+            stiffness: 400,
+            damping: 30
+          }}
+        />
+      )}
+
+      {mode === "notes" && (
+        <motion.div
+          layoutId="active-pill"
+          className="absolute inset-y-1 right-1 w-[calc(50%-4px)] rounded-xl bg-white shadow-md"
+          transition={{
+            type: "spring",
+            stiffness: 400,
+            damping: 30
+          }}
+        />
+      )}
 
       <button
-        type="button"
         onClick={() => setMode("topic")}
-        className={`
-          rounded-xl
-          py-3
-          font-semibold
-          transition-all
-          duration-300
-          ${
-            mode === "topic"
-              ? "bg-white text-slate-900 shadow-md"
-              : "text-slate-500 hover:bg-white/60"
-          }
-        `}
+        className="relative z-10 rounded-xl py-3 font-semibold"
       >
         Topic
       </button>
 
       <button
-        type="button"
         onClick={() => setMode("notes")}
-        className={`
-          rounded-xl
-          py-3
-          font-semibold
-          transition-all
-          duration-300
-          ${
-            mode === "notes"
-              ? "bg-white text-slate-900 shadow-md"
-              : "text-slate-500 hover:bg-white/60"
-          }
-        `}
+        className="relative z-10 rounded-xl py-3 font-semibold"
       >
         Notes
       </button>
 
     </div>
+
   );
+
 };
 
 export default ModeToggle;

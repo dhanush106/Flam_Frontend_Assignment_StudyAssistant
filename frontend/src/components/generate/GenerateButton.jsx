@@ -1,8 +1,16 @@
 import { Sparkles } from "lucide-react";
-
+import { motion } from "framer-motion";
 const GenerateButton = ({ loading = false }) => {
   return (
-    <button
+    <motion.button
+    whileHover={{
+        y:-4,
+        scale:1.02
+    }}
+
+    whileTap={{
+        scale:.98
+    }}
       type="submit"
       disabled={loading}
       className="
@@ -35,7 +43,6 @@ const GenerateButton = ({ loading = false }) => {
         disabled:opacity-70
       "
     >
-      {/* Shine Effect */}
 
       <span
         className="
@@ -52,8 +59,6 @@ const GenerateButton = ({ loading = false }) => {
         "
       />
 
-      {/* Icon */}
-
       <Sparkles
         size={20}
         className="
@@ -67,7 +72,7 @@ const GenerateButton = ({ loading = false }) => {
       <span className="relative">
         {loading ? "Generating..." : "Generate"}
       </span>
-    </button>
+    </motion.button>
   );
 };
 
