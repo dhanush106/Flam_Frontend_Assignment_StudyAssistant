@@ -1,11 +1,52 @@
-import React from 'react'
+import { useState } from "react";
+
+import ModeToggle from "../components/generate/ModeToggle";
+import TopicForm from "../components/generate/TopicForm";
+import NotesForm from "../components/generate/NotesForm";
 
 const Generate = () => {
+  const [mode, setMode] = useState("topic");
+
   return (
-    <div>
-      Generate
-    </div>
-  )
-}
+    <main className="min-h-screen bg-slate-50 px-6 py-16">
+
+      <div className="mx-auto flex max-w-7xl items-center justify-center">
+
+        <div className="glass w-full max-w-2xl rounded-[28px] p-8 md:p-10">
+
+          <div className="mb-8 text-center">
+
+            <h1 className="text-4xl font-black text-slate-900">
+              Generate Learning Content
+            </h1>
+
+            <p className="mt-3 text-slate-500">
+              Create personalized AI learning resources.
+            </p>
+
+          </div>
+
+          <ModeToggle
+            mode={mode}
+            setMode={setMode}
+          />
+
+          <div className="mt-8">
+
+            {mode === "topic" ? (
+              <TopicForm />
+            ) : (
+              <NotesForm />
+            )}
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+  );
+};
 
 export default Generate;
