@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 import ModeToggle from "../components/generate/ModeToggle";
 import TopicForm from "../components/generate/TopicForm";
@@ -8,15 +9,20 @@ const Generate = () => {
   const [mode, setMode] = useState("topic");
 
   return (
-    <main className="min-h-screen bg-slate-50 px-6 py-16">
+    <main className="min-h-screen bg-slate-50 px-6 py-20">
 
-      <div className="mx-auto flex max-w-7xl items-center justify-center">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: .6 }}
+        className="mx-auto flex max-w-7xl justify-center"
+      >
 
-        <div className="glass w-full max-w-2xl rounded-[28px] p-8 md:p-10">
+        <div className="glass w-full max-w-2xl rounded-[32px] p-10">
 
           <div className="mb-8 text-center">
 
-            <h1 className="text-4xl font-black text-slate-900">
+            <h1 className="text-4xl font-black">
               Generate Learning Content
             </h1>
 
@@ -31,19 +37,40 @@ const Generate = () => {
             setMode={setMode}
           />
 
-          <div className="mt-8">
+          <AnimatePresence mode="wait">
 
-            {mode === "topic" ? (
-              <TopicForm />
-            ) : (
-              <NotesForm />
-            )}
+            <motion.div
+              key={mode}
+              initial={{
+                opacity: 0,
+                x: mode === "topic" ? -40 : 40,
+                scale: .98
+              }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                scale: 1
+              }}
+              exit={{
+                opacity: 0,
+                x: mode === "topic" ? 40 : -40,
+                scale: .98
+              }}
+              transition={{
+                duration: .4
+              }}
+              className="mt-8"
+            >
+              {mode === "topic"
+                ? <TopicForm />
+                : <NotesForm />}
+            </motion.div>
 
-          </div>
+          </AnimatePresence>
 
         </div>
 
-      </div>
+      </motion.div>
 
     </main>
   );
