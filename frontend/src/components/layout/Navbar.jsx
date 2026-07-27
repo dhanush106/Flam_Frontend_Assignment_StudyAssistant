@@ -1,35 +1,86 @@
-import React from 'react'
-import {Link, useLocation} from 'react-router-dom'
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+
 const Navbar = () => {
-    
   return (
-    <nav>
-        <div className='rounded-full flex align-middle items-center gap-10 p-10 glass w-fit'>
-            <NavItem
-                link="/"
-                item="Home"
-            />
-            <NavItem
-                link="/generate"
-                item="Generate"
-            />
-            <NavItem
-                link="/about"
-                item="About"
-            />
-        </div>
+    <nav className="fixed left-1/2 top-6 z-50 -translate-x-1/2">
+      <div
+        className="
+          glass
+          flex
+          items-center
+          gap-2
+          rounded-full
+          border
+          border-white/70
+          px-3
+          py-2
+          shadow-[0_20px_60px_rgba(15,23,42,.08)]
+        "
+      >
+        <NavItem link="/" item="Home" />
+        <NavItem link="/generate" item="Generate" />
+        <NavItem link="/about" item="About" />
+      </div>
     </nav>
-  )
-}
-
-const NavItem = ({ link, item }) => {
-    const location = useLocation();
-
-    return (
-        <div className={`${location.pathname === link ? "bg-transparent backdrop-blur-lg border-2 border-white/20 shadow-lg" : null}  px-6 py-2 rounded-full`}>
-            <Link to={link}>{item}</Link>
-        </div>
-    );
+  );
 };
 
-export default Navbar
+const NavItem = ({ link, item }) => {
+  const { pathname } = useLocation();
+
+  const active = pathname === link;
+
+  return (
+    <Link
+      to={link}
+      className={`
+        relative
+        overflow-hidden
+        rounded-full
+        px-6
+        py-3
+        text-sm
+        font-semibold
+        transition-all
+        duration-300
+
+        ${
+          active
+            ? `
+              bg-white/70
+              text-slate-900
+              shadow-lg
+              border
+              border-white/80
+            `
+            : `
+              text-slate-600
+              hover:bg-white/40
+              hover:text-slate-900
+            `
+        }
+      `}
+    >
+      {/* Reflection */}
+
+      <span
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          rounded-full
+          bg-gradient-to-b
+          from-white/70
+          via-transparent
+          to-transparent
+          opacity-60
+        "
+      />
+
+      <span className="relative z-10">{item}</span>
+    </Link>
+  );
+};
+
+export default Navbar;
