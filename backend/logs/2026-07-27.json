@@ -1,0 +1,275 @@
+[
+  {
+    "id": "491bddc7-ee54-4115-b14b-0b7c476f750e",
+    "timestamp": "2026-07-27T18:42:20.249Z",
+    "status": "success",
+    "execution": {
+      "provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it:free",
+      "responseTimeMs": 92855,
+      "retryCount": 0
+    },
+    "request": {
+      "mode": "notes",
+      "notes": "An Operating System (OS) is system software that acts as an intermediary between the computer hardware and the user. It manages hardware resources, executes applications, provides security, and offers a user-friendly interface. Without an operating system, users would have to communicate directly with hardware using machine-level instructions, making computers extremely difficult to use.\n\nOne of the primary responsibilities of an operating system is Process Management. A process is an instance of a program in execution. The OS creates processes, schedules them for execution, synchronizes them, and terminates them when they complete. Modern operating systems support multitasking, allowing multiple processes to run concurrently by rapidly switching the CPU between them. This switching is performed by the scheduler using algorithms such as First Come First Serve (FCFS), Shortest Job First (SJF), Priority Scheduling, Round Robin (RR), and Multilevel Queue Scheduling.\n\nAnother important function is Memory Management. The operating system keeps track of every byte of memory and decides which process gets memory at what time. It allocates and deallocates memory dynamically, ensuring efficient utilization of RAM. Techniques like Paging, Segmentation, Virtual Memory, Demand Paging, and Memory Protection are widely used to improve performance and allow multiple applications to coexist without interfering with one another.\n\nThe File System is another essential component. It organizes data into files and directories, allowing users to store, retrieve, modify, and delete information efficiently. Popular file systems include FAT32, NTFS, ext4, APFS, and exFAT. The OS also maintains metadata such as file permissions, ownership, timestamps, and file size. Hierarchical directory structures make navigation and management easier.\n\nCPU Scheduling is responsible for selecting the next process to execute. Efficient scheduling maximizes CPU utilization, throughput, and responsiveness while minimizing waiting time, turnaround time, and response time. Preemptive scheduling allows the OS to interrupt a running process, whereas non-preemptive scheduling lets the process finish voluntarily before another starts.\n\nThe operating system also manages Input/Output (I/O) Devices. Every hardware device communicates with the operating system through device drivers. Drivers act as translators between the OS and hardware. Buffering, caching, and spooling techniques are employed to improve I/O performance and reduce waiting times.\n\nA significant challenge in operating systems is Deadlock. Deadlock occurs when two or more processes wait indefinitely for resources held by one another. Four necessary conditions for deadlock are Mutual Exclusion, Hold and Wait, No Preemption, and Circular Wait. Deadlock can be handled using prevention, avoidance (Banker's Algorithm), detection, and recovery methods.\n\nSynchronization ensures that multiple processes access shared resources safely. Critical Section problems arise when several processes modify shared data simultaneously. Synchronization mechanisms include Mutex Locks, Semaphores, Monitors, Spinlocks, and Condition Variables. Peterson's Algorithm is a classic software solution for process synchronization involving two processes."
+    },
+    "prompt": "\nYou are an expert teacher.\n\nThe student has provided study notes.\n\nYour job is to analyze the notes and generate concise revision material.\n\nStudent Notes:\n\nAn Operating System (OS) is system software that acts as an intermediary between the computer hardware and the user. It manages hardware resources, executes applications, provides security, and offers a user-friendly interface. Without an operating system, users would have to communicate directly with hardware using machine-level instructions, making computers extremely difficult to use.\n\nOne of the primary responsibilities of an operating system is Process Management. A process is an instance of a program in execution. The OS creates processes, schedules them for execution, synchronizes them, and terminates them when they complete. Modern operating systems support multitasking, allowing multiple processes to run concurrently by rapidly switching the CPU between them. This switching is performed by the scheduler using algorithms such as First Come First Serve (FCFS), Shortest Job First (SJF), Priority Scheduling, Round Robin (RR), and Multilevel Queue Scheduling.\n\nAnother important function is Memory Management. The operating system keeps track of every byte of memory and decides which process gets memory at what time. It allocates and deallocates memory dynamically, ensuring efficient utilization of RAM. Techniques like Paging, Segmentation, Virtual Memory, Demand Paging, and Memory Protection are widely used to improve performance and allow multiple applications to coexist without interfering with one another.\n\nThe File System is another essential component. It organizes data into files and directories, allowing users to store, retrieve, modify, and delete information efficiently. Popular file systems include FAT32, NTFS, ext4, APFS, and exFAT. The OS also maintains metadata such as file permissions, ownership, timestamps, and file size. Hierarchical directory structures make navigation and management easier.\n\nCPU Scheduling is responsible for selecting the next process to execute. Efficient scheduling maximizes CPU utilization, throughput, and responsiveness while minimizing waiting time, turnaround time, and response time. Preemptive scheduling allows the OS to interrupt a running process, whereas non-preemptive scheduling lets the process finish voluntarily before another starts.\n\nThe operating system also manages Input/Output (I/O) Devices. Every hardware device communicates with the operating system through device drivers. Drivers act as translators between the OS and hardware. Buffering, caching, and spooling techniques are employed to improve I/O performance and reduce waiting times.\n\nA significant challenge in operating systems is Deadlock. Deadlock occurs when two or more processes wait indefinitely for resources held by one another. Four necessary conditions for deadlock are Mutual Exclusion, Hold and Wait, No Preemption, and Circular Wait. Deadlock can be handled using prevention, avoidance (Banker's Algorithm), detection, and recovery methods.\n\nSynchronization ensures that multiple processes access shared resources safely. Critical Section problems arise when several processes modify shared data simultaneously. Synchronization mechanisms include Mutex Locks, Semaphores, Monitors, Spinlocks, and Condition Variables. Peterson's Algorithm is a classic software solution for process synchronization involving two processes.\n\nRequirements:\n\n- Summarize the notes clearly.\n- Extract the most important concepts.\n- Generate flashcards.\n- Keep answers concise.\n- Flashcards should help in revision.\n- Do not invent concepts not present in the notes.\n\nIMPORTANT:\n\n- Return ONLY valid JSON.\n- No markdown.\n- No code fences.\n- No explanations.\n- IDs must be unique.\n- Generate 8-12 flashcards.\n\nReturn EXACTLY this JSON:\n\n{\n  \"type\":\"notes\",\n  \"metadata\":{\n    \"estimatedReadingMinutes\":0\n  },\n  \"summary\":\"\",\n  \"keyConcepts\":[\n    \"\"\n  ],\n  \"flashcards\":[\n    {\n      \"id\":\"fc-1\",\n      \"topic\":\"\",\n      \"question\":\"\",\n      \"answer\":\"\"\n    }\n  ]\n}\n",
+    "response": {
+      "raw": "{\n  \"type\": \"notes\",\n  \"metadata\": {\n    \"estimatedReadingMinutes\": 4\n  },\n  \"summary\": \"An Operating System (OS) serves as an intermediary between hardware and users, managing resources like the CPU, memory, and I/O devices. Key functions include process management (scheduling and multitasking), memory management (allocation and protection), file system organization, and I/O management via drivers. The OS must also handle complex challenges like deadlocks, where processes wait indefinitely for resources, and synchronization, which ensures safe access to shared data through mechanisms like semaphores and mutexes.\",\n  \"keyConcepts\": [\n    \"Process Management\",\n    \"Memory Management\",\n    \"File Systems\",\n    \"CPU Scheduling\",\n    \"I/O Management\",\n    \"Deadlock\",\n    \"Process Synchronization\"\n  ],\n  \"flashcards\": [\n    {\n      \"id\": \"fc-1\",\n      \"topic\": \"Operating System Definition\",\n      \"question\": \"What is the primary role of an Operating System?\",\n      \"answer\": \"To act as an intermediary between computer hardware and the user, managing resources and providing a user interface.\"\n    },\n    {\n      \"id\": \"fc-2\",\n      \"topic\": \"Process Management\",\n      \"question\": \"What is a 'process' in an operating system?\",\n      \"answer\": \"An instance of a program currently in execution.\"\n    },\n    {\n      \"id\": \"fc-3\",\n      \"topic\": \"CPU Scheduling\",\n      \"question\": \"Name four common CPU scheduling algorithms.\",\n      \"answer\": \"FCFS, SJF, Priority Scheduling, and Round Robin (RR).\"\n    },\n    {\n      \"id\": \"fc-4\",\n      \"topic\": \"Memory Management\",\n      \"question\": \"What are common techniques used for efficient memory management?\",\n      \"answer\": \"Paging, Segmentation, Virtual Memory, Demand Paging, and Memory Protection.\"\n    },\n    {\n      \"id\": \"fc-5\",\n      \"topic\": \"File Systems\",\n      \"question\": \"What is the purpose of a file system?\",\n      \"answer\": \"To organize data into files and directories for efficient storage, retrieval, modification, and deletion.\"\n    },\n    {\n      \"id\": \"fc-6\",\n      \"topic\": \"I/O Management\",\n      \"question\": \"How do hardware devices communicate with the operating system?\",\n      \"answer\": \"Through device drivers, which act as translators.\"\n    },\n    {\n      \"id\": \"fc-7\",\n      \"topic\": \"Deadlock\",\n      \"question\": \"What are the four necessary conditions for a deadlock to occur?\",\n      \"answer\": \"Mutual Exclusion, Hold and Wait, No Preemption, and Circular Wait.\"\n    },\n    {\n      \"id\": \"fc-8\",\n      \"topic\": \"Deadlock Handling\",\n      \"question\": \"What are the four methods for handling deadlocks?\",\n      \"answer\": \"Prevention, avoidance (e.g., Banker's Algorithm), detection, and recovery.\"\n    },\n    {\n      \"id\": \"fc-9\",\n      \"topic\": \"Process Synchronization\",\n      \"question\": \"What is a 'Critical Section' problem?\",\n      \"answer\": \"When multiple processes attempt to modify shared data simultaneously, requiring synchronization.\"\n    },\n    {\n      \"id\": \"fc-10\",\n      \"topic\": \"Synchronization Mechanisms\",\n      \"question\": \"Name three mechanisms used for process synchronization.\",\n      \"answer\": \"Mutex Locks, Semaphores, and Monitors.\"\n    }\n  ]\n}",
+      "parsed": {
+        "type": "notes",
+        "metadata": {
+          "estimatedReadingMinutes": 4
+        },
+        "summary": "An Operating System (OS) serves as an intermediary between hardware and users, managing resources like the CPU, memory, and I/O devices. Key functions include process management (scheduling and multitasking), memory management (allocation and protection), file system organization, and I/O management via drivers. The OS must also handle complex challenges like deadlocks, where processes wait indefinitely for resources, and synchronization, which ensures safe access to shared data through mechanisms like semaphores and mutexes.",
+        "keyConcepts": [
+          "Process Management",
+          "Memory Management",
+          "File Systems",
+          "CPU Scheduling",
+          "I/O Management",
+          "Deadlock",
+          "Process Synchronization"
+        ],
+        "flashcards": [
+          {
+            "id": "fc-1",
+            "topic": "Operating System Definition",
+            "question": "What is the primary role of an Operating System?",
+            "answer": "To act as an intermediary between computer hardware and the user, managing resources and providing a user interface."
+          },
+          {
+            "id": "fc-2",
+            "topic": "Process Management",
+            "question": "What is a 'process' in an operating system?",
+            "answer": "An instance of a program currently in execution."
+          },
+          {
+            "id": "fc-3",
+            "topic": "CPU Scheduling",
+            "question": "Name four common CPU scheduling algorithms.",
+            "answer": "FCFS, SJF, Priority Scheduling, and Round Robin (RR)."
+          },
+          {
+            "id": "fc-4",
+            "topic": "Memory Management",
+            "question": "What are common techniques used for efficient memory management?",
+            "answer": "Paging, Segmentation, Virtual Memory, Demand Paging, and Memory Protection."
+          },
+          {
+            "id": "fc-5",
+            "topic": "File Systems",
+            "question": "What is the purpose of a file system?",
+            "answer": "To organize data into files and directories for efficient storage, retrieval, modification, and deletion."
+          },
+          {
+            "id": "fc-6",
+            "topic": "I/O Management",
+            "question": "How do hardware devices communicate with the operating system?",
+            "answer": "Through device drivers, which act as translators."
+          },
+          {
+            "id": "fc-7",
+            "topic": "Deadlock",
+            "question": "What are the four necessary conditions for a deadlock to occur?",
+            "answer": "Mutual Exclusion, Hold and Wait, No Preemption, and Circular Wait."
+          },
+          {
+            "id": "fc-8",
+            "topic": "Deadlock Handling",
+            "question": "What are the four methods for handling deadlocks?",
+            "answer": "Prevention, avoidance (e.g., Banker's Algorithm), detection, and recovery."
+          },
+          {
+            "id": "fc-9",
+            "topic": "Process Synchronization",
+            "question": "What is a 'Critical Section' problem?",
+            "answer": "When multiple processes attempt to modify shared data simultaneously, requiring synchronization."
+          },
+          {
+            "id": "fc-10",
+            "topic": "Synchronization Mechanisms",
+            "question": "Name three mechanisms used for process synchronization.",
+            "answer": "Mutex Locks, Semaphores, and Monitors."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "67bdc9cc-caa4-4de6-9a4e-24bcb1985c7d",
+    "timestamp": "2026-07-27T18:48:38.500Z",
+    "status": "success",
+    "execution": {
+      "provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it:free",
+      "responseTimeMs": 105922,
+      "retryCount": 0
+    },
+    "request": {
+      "mode": "topic",
+      "topic": "Operating System",
+      "difficulty": "Intermediate",
+      "depth": "Quick",
+      "roadmap": true,
+      "flashcards": true
+    },
+    "prompt": "\nYou are an expert professor and curriculum designer.\n\nGenerate a structured learning roadmap for the following topic.\n\nStudent Information:\n- Topic: Operating System\n- Current Level: undefined\n- Expected Depth: Quick\n\nRequirements:\n- Generate a detailed learning roadmap.\n- Generate flashcards for revision.\n\nGuidelines:\n\n- The roadmap must progress from beginner concepts to advanced concepts.\n- Each roadmap module should naturally build upon the previous one.\n- Keep explanations concise, clear, and beginner-friendly.\n- Focus on concepts that are important for interviews and practical understanding.\n- Each flashcard should test exactly one important concept.\n- Flashcards should cover concepts from the roadmap.\n- Generate realistic study durations.\n- Use ONLY the allowed difficulty values:\n  - Easy\n  - Medium\n  - Hard\n\nIMPORTANT:\n-You are a JSON generator.\n\nYou MUST respond with ONLY a valid JSON object.\n\nDo NOT include:\n- markdown\n- explanations\n- notes\n- comments\n- code fences\n- greetings\n- extra text\n\nYour entire response must begin with '{' and end with '}'.\n- Return ONLY valid JSON.\n- Do NOT include markdown.\n- Do NOT wrap the response inside ```.\n- Do NOT write explanations before or after the JSON.\n- All IDs must be unique.\n- estimatedMinutes and estimatedCompletionMinutes must be numbers.\n- keyConcepts should contain 2–5 important concepts.\n- Generate between 5 and 8 roadmap modules.\n- Generate between 8 and 12 flashcards.\n\nReturn JSON in EXACTLY this format:\n\n{\n  \"type\": \"topic\",\n  \"metadata\": {\n    \"title\": \"\",\n    \"level\": \"\",\n    \"depth\": \"\",\n    \"estimatedCompletionMinutes\": 0,\n    \"moduleCount\": 0\n  },\n  \"summary\": \"\",\n  \"roadmap\": [\n    {\n      \"id\": \"rm-1\",\n      \"order\": 1,\n      \"title\": \"\",\n      \"description\": \"\",\n      \"difficulty\": \"Easy\",\n      \"estimatedMinutes\": 0,\n      \"keyConcepts\": [\n        \"\",\n        \"\"\n      ]\n    }\n  ],\n  \"flashcards\": [\n    {\n      \"id\": \"fc-1\",\n      \"topic\": \"\",\n      \"question\": \"\",\n      \"answer\": \"\"\n    }\n  ]\n}\n",
+    "response": {
+      "raw": "{\n  \"type\": \"topic\",\n  \"metadata\": {\n    \"title\": \"Operating Systems\",\n    \"level\": \"Beginner\",\n    \"depth\": \"Quick\",\n    \"estimatedCompletionMinutes\": 480,\n    \"moduleCount\": 6\n  },\n  \"summary\": \"A fast-paced overview of Operating System fundamentals, covering process management, memory, storage, and concurrency, designed for quick comprehension and interview preparation.\",\n  \"roadmap\": [\n    {\n      \"id\": \"rm-1\",\n      \"order\": 1,\n      \"title\": \"Introduction to OS\",\n      \"description\": \"Understand the role of an OS as a resource manager and the interface between hardware and users.\",\n      \"difficulty\": \"Easy\",\n      \"estimatedMinutes\": 45,\n      \"keyConcepts\": [\n        \"Kernel vs Shell\",\n        \"System Calls\",\n        \"Interrupts\"\n      ]\n    },\n    {\n      \"id\": \"rm-2\",\n      \"order\": 2,\n      \"title\": \"Process Management\",\n      \"description\": \"Learn how the OS manages executing programs and handles multiple tasks.\",\n      \"difficulty\": \"Medium\",\n      \"estimatedMinutes\": 90,\n      \"keyConcepts\": [\n        \"Process vs Thread\",\n        \"Process Control Block (PCB)\",\n        \"Context Switching\"\n      ]\n    },\n    {\n      \"id\": \"rm-3\",\n      \"order\": 3,\n      \"title\": \"CPU Scheduling\",\n      \"description\": \"Study algorithms used by the OS to decide which process runs next.\",\n      \"difficulty\": \"Medium\",\n      \"estimatedMinutes\": 75,\n      \"keyConcepts\": [\n        \"First-Come First-Served (FCFS)\",\n        \"Round Robin\",\n        \"Shortest Job First (SJF)\"\n      ]\n    },\n    {\n      \"id\": \"rm-4\",\n      \"order\": 4,\n      \"title\": \"Concurrency and Deadlocks\",\n      \"description\": \"Explore how processes interact and how to prevent system freezes.\",\n      \"difficulty\": \"Hard\",\n      \"estimatedMinutes\": 90,\n      \"keyConcepts\": [\n        \"Race Conditions\",\n        \"Mutex vs Semaphore\",\n        \"Deadlock Conditions\"\n      ]\n    },\n    {\n      \"id\": \"rm-5\",\n      \"order\": 5,\n      \"title\": \"Memory Management\",\n      \"description\": \"Understand how RAM is allocated and how virtual memory works.\",\n      \"difficulty\": \"Hard\",\n      \"estimatedMinutes\": 90,\n      \"keyConcepts\": [\n        \"Paging\",\n        \"Segmentation\",\n        \"Virtual Memory\"\n      ]\n    },\n    {\n      \"id\": \"rm-6\",\n      \"order\": 6,\n      \"title\": \"Storage and File Systems\",\n      \"description\": \"Learn how data is organized and stored on physical disks.\",\n      \"difficulty\": \"Easy\",\n      \"estimatedMinutes\": 90,\n      \"keyConcepts\": [\n        \"File Allocation Methods\",\n        \"Disk Scheduling\",\n        \"Inodes\"\n      ]\n    }\n  ],\n  \"flashcards\": [\n    {\n      \"id\": \"fc-1\",\n      \"topic\": \"Introduction\",\n      \"question\": \"What is the primary function of the Kernel?\",\n      \"answer\": \"The kernel acts as the core of the OS, managing system resources and communication between hardware and software.\"\n    },\n    {\n      \"id\": \"fc-2\",\n      \"topic\": \"Process Management\",\n      \"question\": \"What is the main difference between a process and a thread?\",\n      \"answer\": \"A process is an independent program in execution with its own memory space, while a thread is a subset of a process that shares the same memory space.\"\n    },\n    {\n      \"id\": \"fc-3\",\n      \"topic\": \"CPU Scheduling\",\n      \"question\": \"What is the goal of Round Robin scheduling?\",\n      \"answer\": \"To provide fair CPU time to all processes by using a fixed time quantum for each process.\"\n    },\n    {\n      \"id\": \"fc-4\",\n      \"topic\": \"Concurrency\",\n      \"question\": \"What is a Deadlock?\",\n      \"answer\": \"A situation where a set of processes are blocked because each process is holding a resource and waiting for another resource held by another process.\"\n    },\n    {\n      \"id\": \"fc-5\",\n      \"topic\": \"Concurrency\",\n      \"question\": \"What is the difference between a Mutex and a Semaphore?\",\n      \"answer\": \"A Mutex is a locking mechanism used to ensure only one thread accesses a resource at a time, while a Semaphore is a signaling mechanism that allows a specific number of threads to access a resource.\"\n    },\n    {\n      \"id\": \"fc-6\",\n      \"topic\": \"Memory Management\",\n      \"question\": \"What is Virtual Memory?\",\n      \"answer\": \"A memory management technique that allows the execution of processes that are larger than the physical RAM by using disk space as an extension.\"\n    },\n    {\n      \"id\": \"fc-7\",\n      \"topic\": \"Memory Management\",\n      \"question\": \"What is Paging?\",\n      \"answer\": \"A memory management scheme that eliminates the need for contiguous allocation of physical memory by dividing physical memory into fixed-size blocks called frames.\"\n    },\n    {\n      \"id\": \"fc-8\",\n      \"topic\": \"Storage\",\n      \"question\": \"What is an Inode in a file system?\",\n      \"answer\": \"A data structure used to store metadata about a file, such as size, owner, and disk block locations, but not the filename or actual data.\"\n    },\n    {\n      \"id\": \"fc-9\",\n      \"topic\": \"Process Management\",\n      \"question\": \"What is Context Switching?\",\n      \"answer\": \"The process of storing the state of a process or thread so that it can be restored and execution resumed from the same point later.\"\n    },\n    {\n      \"id\": \"fc-10\",\n      \"topic\": \"Concurrency\",\n      \"question\": \"What is a Race Condition?\",\n      \"answer\": \"A situation where the outcome of a process depends on the unpredictable order or timing of other processes accessing shared data.\"\n    }\n  ]\n}",
+      "parsed": {
+        "type": "topic",
+        "metadata": {
+          "title": "Operating Systems",
+          "level": "Beginner",
+          "depth": "Quick",
+          "estimatedCompletionMinutes": 480,
+          "moduleCount": 6
+        },
+        "summary": "A fast-paced overview of Operating System fundamentals, covering process management, memory, storage, and concurrency, designed for quick comprehension and interview preparation.",
+        "roadmap": [
+          {
+            "id": "rm-1",
+            "order": 1,
+            "title": "Introduction to OS",
+            "description": "Understand the role of an OS as a resource manager and the interface between hardware and users.",
+            "difficulty": "Easy",
+            "estimatedMinutes": 45,
+            "keyConcepts": [
+              "Kernel vs Shell",
+              "System Calls",
+              "Interrupts"
+            ]
+          },
+          {
+            "id": "rm-2",
+            "order": 2,
+            "title": "Process Management",
+            "description": "Learn how the OS manages executing programs and handles multiple tasks.",
+            "difficulty": "Medium",
+            "estimatedMinutes": 90,
+            "keyConcepts": [
+              "Process vs Thread",
+              "Process Control Block (PCB)",
+              "Context Switching"
+            ]
+          },
+          {
+            "id": "rm-3",
+            "order": 3,
+            "title": "CPU Scheduling",
+            "description": "Study algorithms used by the OS to decide which process runs next.",
+            "difficulty": "Medium",
+            "estimatedMinutes": 75,
+            "keyConcepts": [
+              "First-Come First-Served (FCFS)",
+              "Round Robin",
+              "Shortest Job First (SJF)"
+            ]
+          },
+          {
+            "id": "rm-4",
+            "order": 4,
+            "title": "Concurrency and Deadlocks",
+            "description": "Explore how processes interact and how to prevent system freezes.",
+            "difficulty": "Hard",
+            "estimatedMinutes": 90,
+            "keyConcepts": [
+              "Race Conditions",
+              "Mutex vs Semaphore",
+              "Deadlock Conditions"
+            ]
+          },
+          {
+            "id": "rm-5",
+            "order": 5,
+            "title": "Memory Management",
+            "description": "Understand how RAM is allocated and how virtual memory works.",
+            "difficulty": "Hard",
+            "estimatedMinutes": 90,
+            "keyConcepts": [
+              "Paging",
+              "Segmentation",
+              "Virtual Memory"
+            ]
+          },
+          {
+            "id": "rm-6",
+            "order": 6,
+            "title": "Storage and File Systems",
+            "description": "Learn how data is organized and stored on physical disks.",
+            "difficulty": "Easy",
+            "estimatedMinutes": 90,
+            "keyConcepts": [
+              "File Allocation Methods",
+              "Disk Scheduling",
+              "Inodes"
+            ]
+          }
+        ],
+        "flashcards": [
+          {
+            "id": "fc-1",
+            "topic": "Introduction",
+            "question": "What is the primary function of the Kernel?",
+            "answer": "The kernel acts as the core of the OS, managing system resources and communication between hardware and software."
+          },
+          {
+            "id": "fc-2",
+            "topic": "Process Management",
+            "question": "What is the main difference between a process and a thread?",
+            "answer": "A process is an independent program in execution with its own memory space, while a thread is a subset of a process that shares the same memory space."
+          },
+          {
+            "id": "fc-3",
+            "topic": "CPU Scheduling",
+            "question": "What is the goal of Round Robin scheduling?",
+            "answer": "To provide fair CPU time to all processes by using a fixed time quantum for each process."
+          },
+          {
+            "id": "fc-4",
+            "topic": "Concurrency",
+            "question": "What is a Deadlock?",
+            "answer": "A situation where a set of processes are blocked because each process is holding a resource and waiting for another resource held by another process."
+          },
+          {
+            "id": "fc-5",
+            "topic": "Concurrency",
+            "question": "What is the difference between a Mutex and a Semaphore?",
+            "answer": "A Mutex is a locking mechanism used to ensure only one thread accesses a resource at a time, while a Semaphore is a signaling mechanism that allows a specific number of threads to access a resource."
+          },
+          {
+            "id": "fc-6",
+            "topic": "Memory Management",
+            "question": "What is Virtual Memory?",
+            "answer": "A memory management technique that allows the execution of processes that are larger than the physical RAM by using disk space as an extension."
+          },
+          {
+            "id": "fc-7",
+            "topic": "Memory Management",
+            "question": "What is Paging?",
+            "answer": "A memory management scheme that eliminates the need for contiguous allocation of physical memory by dividing physical memory into fixed-size blocks called frames."
+          },
+          {
+            "id": "fc-8",
+            "topic": "Storage",
+            "question": "What is an Inode in a file system?",
+            "answer": "A data structure used to store metadata about a file, such as size, owner, and disk block locations, but not the filename or actual data."
+          },
+          {
+            "id": "fc-9",
+            "topic": "Process Management",
+            "question": "What is Context Switching?",
+            "answer": "The process of storing the state of a process or thread so that it can be restored and execution resumed from the same point later."
+          },
+          {
+            "id": "fc-10",
+            "topic": "Concurrency",
+            "question": "What is a Race Condition?",
+            "answer": "A situation where the outcome of a process depends on the unpredictable order or timing of other processes accessing shared data."
+          }
+        ]
+      }
+    }
+  }
+]

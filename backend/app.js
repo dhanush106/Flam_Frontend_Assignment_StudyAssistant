@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 dotenv.config();
+import cors from 'cors';
 import express from "express";
 import { generateAIResponse } from "./services/ai.service.js";
 import { buildTopicPrompt } from "./services/promptBuilder.js";
@@ -9,6 +10,12 @@ const app = express();
 const PORT = process.env.PORT
 app.use(express.json());
 app.use(requestLogger);
+
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+  })
+);
 
 app.post("/test/generate", async (req, res) => {
     try {
