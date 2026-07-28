@@ -13,7 +13,7 @@ app.use(requestLogger);
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://ai-study-assistant-nu-lime.vercel.app/",
   })
 );
 
