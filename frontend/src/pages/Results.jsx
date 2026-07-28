@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import {
   BookOpen,
   Brain,
-  Route,
   Clock,
   Layers,
 } from "lucide-react";
@@ -29,6 +28,7 @@ const Results = () => {
   }
 
   const content = resolvedContent;
+  const historyId = state?.historyId || presentRequest?.id || null;
 
   const metadata = content.metadata || {};
 
@@ -97,6 +97,7 @@ const Results = () => {
           <RoadmapPreview
             roadmap={content.roadmap}
             flashcards={content.flashcards}
+            historyId={historyId}
           />
 
           <FlashcardsPreview

@@ -42,9 +42,10 @@ const Roadmap = () => {
 
   const roadmap = resolvedRoadmap;
   const flashcards = resolvedFlashcards;
+  const topicId = state?.topicId || presentRequest?.id || "default";
 
   return (
-    <ProgressProvider roadmap={roadmap}>
+    <ProgressProvider roadmap={roadmap} topicId={topicId}>
       <motion.main
         initial={{
           opacity: 0,

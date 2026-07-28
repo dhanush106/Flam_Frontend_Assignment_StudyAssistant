@@ -6,7 +6,7 @@ Generate a structured learning roadmap for the following topic.
 
 Student Information:
 - Topic: ${data.topic}
-- Current Level: ${data.level}
+- Current Level: ${data.difficulty}
 - Expected Depth: ${data.depth}
 
 Requirements:

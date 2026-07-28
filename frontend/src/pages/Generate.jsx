@@ -4,8 +4,6 @@ import { useNavigate } from "react-router-dom";
 import ModeToggle from "../components/generate/ModeToggle";
 import TopicForm from "../components/generate/TopicForm";
 import NotesForm from "../components/generate/NotesForm";
-
-// Service (we'll create this later)
 import { generateContent } from "../services/aiService";
 import { useHistory } from "../context/HistoryContext";
 
@@ -30,7 +28,6 @@ const Generate = () => {
 
   const [error, setError] = useState("");
 
-
   const handleGenerate = async () => {
     try {
       setLoading(true);
@@ -49,15 +46,6 @@ const Generate = () => {
 
       const response = await generateContent(payload);
 
-      /*
-        Expected backend response:
-
-        {
-            success:true,
-            content: ...
-        }
-      */
-
       const historyId = addToHistory({
         mode,
         ...(mode === "topic" ? topicData : { notes: notesData.notes }),
@@ -70,27 +58,13 @@ const Generate = () => {
             historyId,
         },
       });
-    } 
-    // catch (err) {
-    //   setError(
-    //     err?.response?.data?.message ||
-    //       "Something went wrong. Please try again."
-    //   );
-    // } 
-    catch (err) {
-  console.log("========== AXIOS ERROR ==========");
-  console.log(err);
-  console.log(err.response);
-  console.log(err.response?.data);
-  console.log(err.message);
-
-  setError(
-    err.response?.data?.message ||
-    err.message ||
-    "Something went wrong."
-  );
-}
-    finally {
+    } catch (err) {
+      setError(
+        err.response?.data?.message ||
+        err.message ||
+        "Something went wrong."
+      );
+    } finally {
       setLoading(false);
     }
   };
@@ -173,22 +147,6 @@ const Generate = () => {
               {error}
             </div>
           )}
-
-          {/* {result && (
-            <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-
-              <h2 className="mb-4 text-xl font-bold">
-                Generated Content
-              </h2>
-
-              <pre className="whitespace-pre-wrap text-sm text-slate-700">
-                {typeof result === "string"
-                  ? result
-                  : JSON.stringify(result, null, 2)}
-              </pre>
-
-            </div>
-          )} */}
 
         </div>
       </motion.div>

@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import { HistoryProvider } from "./context/HistoryContext";
 import Navbar from "./components/layout/Navbar";
 import AnimatedBackground from "./components/ui/AnimatedBackground";
-import LiquidGlass from 'liquid-glass-react'
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Generate from "./pages/Generate";

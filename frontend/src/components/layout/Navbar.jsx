@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
@@ -19,12 +18,9 @@ const Navbar = () => {
         "
       >
         <NavItem link="/" item="Home" />
-<NavItem link="/generate" item="Generate" />
-<NavItem link="/history" item="History" />
-{/* <NavItem link="/results" item="Results" />
-<NavItem link="/roadmap" item="Roadmap" />
-<NavItem link="/flashcards" item="Flashcards" /> */}
-<NavItem link="/about" item="About" />
+        <NavItem link="/generate" item="Generate" />
+        <NavItem link="/history" item="History" />
+        <NavItem link="/about" item="About" />
       </div>
     </nav>
   );
@@ -66,8 +62,6 @@ const NavItem = ({ link, item }) => {
         }
       `}
     >
-      {/* Reflection */}
-
       <span
         className="
           pointer-events-none

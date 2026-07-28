@@ -54,7 +54,6 @@ Your response MUST begin with { and end with }.
       },
     ];
 
-    // Generate AI Response (with retry support)
     const {
       response,
       retries,
@@ -65,10 +64,6 @@ Your response MUST begin with { and end with }.
 
     const responseTimeMs = Date.now() - startTime;
 
-    console.log("\n========== RAW AI RESPONSE ==========\n");
-    console.log(response);
-    console.log("\n=====================================\n");
-
     const cleaned = response
       .replace(/```json/g, "")
       .replace(/```/g, "")
@@ -76,26 +71,23 @@ Your response MUST begin with { and end with }.
 
     const parsed = JSON.parse(cleaned);
 
-    // Save successful interaction
-    await saveAIInteraction({
-      status: "success",
-
-      execution: {
-        provider: process.env.AI_PROVIDER,
-        model: process.env.OPENROUTER_MODEL,
-        responseTimeMs,
-        retryCount: retries,
-      },
-
-      request: req.body,
-
-      prompt,
-
-      response: {
-        raw: response,
-        parsed,
-      },
-    });
+    try {
+      await saveAIInteraction({
+        status: "success",
+        execution: {
+          provider: process.env.AI_PROVIDER,
+          model: process.env.OPENROUTER_MODEL,
+          responseTimeMs,
+          retryCount: retries,
+        },
+        request: req.body,
+        prompt,
+        response: {
+          raw: response,
+          parsed,
+        },
+      });
+    } catch {}
 
     return res.json({
       success: true,
@@ -103,28 +95,23 @@ Your response MUST begin with { and end with }.
     });
 
   } catch (err) {
-
-    console.error(err);
-
     const responseTimeMs = Date.now() - startTime;
 
-    // Save failed interaction
-    await saveAIInteraction({
-      status: "failed",
-
-      execution: {
-        provider: process.env.AI_PROVIDER,
-        model: process.env.OPENROUTER_MODEL,
-        responseTimeMs,
-      },
-
-      request: req.body,
-
-      error: {
-        message: err.message,
-        stack: err.stack,
-      },
-    });
+    try {
+      await saveAIInteraction({
+        status: "failed",
+        execution: {
+          provider: process.env.AI_PROVIDER,
+          model: process.env.OPENROUTER_MODEL,
+          responseTimeMs,
+        },
+        request: req.body,
+        error: {
+          message: err.message,
+          stack: err.stack,
+        },
+      });
+    } catch {}
 
     return res.status(500).json({
       success: false,

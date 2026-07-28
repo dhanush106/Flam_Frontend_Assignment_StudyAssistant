@@ -8,39 +8,39 @@ import {
 
 const ProgressContext = createContext(null);
 
+const PROGRESS_PREFIX = "roadmap-progress-";
+
 export const ProgressProvider = ({
   children,
   roadmap = [],
+  topicId = "default",
 }) => {
+  const storageKey = `${PROGRESS_PREFIX}${topicId}`;
   const [completedModules, setCompletedModules] = useState([]);
 
-  // Load saved progress
   useEffect(() => {
-    const saved = localStorage.getItem("roadmap-progress");
-
-    if (saved) {
-      try {
+    try {
+      const saved = localStorage.getItem(storageKey);
+      if (saved) {
         setCompletedModules(JSON.parse(saved));
-      } catch {
-        localStorage.removeItem("roadmap-progress");
       }
+    } catch {
+      localStorage.removeItem(storageKey);
     }
-  }, []);
+  }, [storageKey]);
 
-  // Persist progress
   useEffect(() => {
     localStorage.setItem(
-      "roadmap-progress",
+      storageKey,
       JSON.stringify(completedModules)
     );
-  }, [completedModules]);
+  }, [completedModules, storageKey]);
 
   const toggleModule = (id) => {
     setCompletedModules((prev) => {
       if (prev.includes(id)) {
         return prev.filter((item) => item !== id);
       }
-
       return [...prev, id];
     });
   };
@@ -51,7 +51,6 @@ export const ProgressProvider = ({
 
   const progress = useMemo(() => {
     if (!roadmap.length) return 0;
-
     return Math.round(
       (completedModules.length / roadmap.length) * 100
     );

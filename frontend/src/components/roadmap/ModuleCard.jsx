@@ -2,7 +2,6 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   ChevronDown,
-  ChevronUp,
   CheckCircle2,
   Circle,
   Clock3,

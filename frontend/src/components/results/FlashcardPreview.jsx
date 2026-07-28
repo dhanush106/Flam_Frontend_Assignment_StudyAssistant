@@ -6,6 +6,8 @@ const FlashcardsPreview = ({ flashcards }) => {
 
   const navigate = useNavigate();
 
+  if (!flashcards?.length) return null;
+
   return (
     <motion.div
       whileHover={{
